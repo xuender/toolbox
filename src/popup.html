@@ -8,60 +8,57 @@
 {% endblock %}
 {% block body %}
 <div class="btn-toolbar">
-  <div class="btn-group">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-      排序
-      <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#" id="sort">顺序</a></li>
-      <li><a href="#" id="desc">倒序</a></li>
-      <li><a href="#" id="reverse">逆转</a></li>
-    </ul>
-  </div><!-- btn-group -->
-  <div class="btn-group">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-      去重
-      <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#" id="unique">唯一</a></li>
-      <li><a href="#" id="repeated">重复</a></li>
-    </ul>
-  </div><!-- btn-group -->
-  <div class="btn-group">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    修整
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <li><a href="#" id="trim">首尾修整</a></li>
-    <li><a href="#" id="trim_row">逐行修整</a></li>
-  </ul>
-</div><!-- btn-group -->
+    <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="g_sort">
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" id="sort"></a></li>
+            <li><a href="#" id="desc"></a></li>
+            <li><a href="#" id="reverse"></a></li>
+        </ul>
+    </div><!-- btn-group -->
+    <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="g_unique">
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" id="unique"></a></li>
+            <li><a href="#" id="repeated"></a></li>
+        </ul>
+    </div><!-- btn-group -->
+    <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="g_trim">
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#" id="trim"></a></li>
+            <li><a href="#" id="trim_row"></a></li>
+        </ul>
+    </div><!-- btn-group -->
 </div><!-- btn-toolbar -->
 <div class="row">
-<form class="form-horizontal">
-  <div class="control-group">
-    <label class="control-label" for="input">输入</label>
-    <div class="controls">
-      <textarea id="input" rows="5"></textarea>
-      <span class="help-block">
-        <span class="badge badge-info" id="i-row">0</span> 行,
-        <span class="badge badge-info" id="i-count">0</span> 字节
-      </span>
-    </div><!-- controls -->
-  </div><!-- control-group -->
-  <div class="control-group">
-    <label class="control-label" for="output">输出</label>
-    <div class="controls">
-      <textarea id="output" rows="5"></textarea>
-      <span class="help-block">
-        <span class="badge badge-info" id="o-row">0</span> 行,
-        <span class="badge badge-info" id="o-count">0</span> 字节
-      </span>
-    </div><!-- controls -->
-  </div><!-- control-group -->
-</form>
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="input">输入</label>
+            <div class="controls">
+                <textarea id="input" rows="5"></textarea>
+                <span class="help-block">
+                    <span class="badge badge-info" id="i-row">0</span> 行,
+                    <span class="badge badge-info" id="i-count">0</span> 字节
+                </span>
+            </div><!-- controls -->
+        </div><!-- control-group -->
+        <div class="control-group">
+            <label class="control-label" for="output">输出</label>
+            <div class="controls">
+                <textarea id="output" rows="5"></textarea>
+                <span class="help-block">
+                    <span class="badge badge-info" id="o-row">0</span> 行,
+                    <span class="badge badge-info" id="o-count">0</span> 字节
+                </span>
+            </div><!-- controls -->
+        </div><!-- control-group -->
+    </form>
 </div>
 {% endblock %}

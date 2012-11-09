@@ -1,0 +1,17 @@
+{
+  "name": {
+    "message": "工具箱"
+  },
+  "description": {
+    "message": "Chrome 工具箱"
+  },
+  "reverse": {
+    "message": "逆转"
+  },
+  "desc": {
+    "message": "倒序"
+  },
+  "sort": {
+    "message": "顺序"
+  }
+}

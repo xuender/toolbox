@@ -1,6 +1,15 @@
 $(document).ready(function(){
+  i18n();
   initBind();
 });
+function i18n(){
+  ['sort', 'desc', 'reverse', 'unique', 'repeated', 'trim', 'trim_row'].forEach(function(id){
+    $('#'+id).text(chrome.i18n.getMessage(id));
+  });
+  ['g_sort', 'g_trim', 'g_unique'].forEach(function(id){
+    $('#'+id).prepend(chrome.i18n.getMessage(id));
+  });
+}
 // 初始化事件
 var COMMAND = {
   'trim': $.trim,
