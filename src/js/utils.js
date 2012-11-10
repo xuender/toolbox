@@ -6,9 +6,7 @@ function trim_row(str){
   });
   return ret.join('\n');
 }
-// 去重
-function unique(str){
-  var array = str.split('\n');
+function uniqueArray(array){
   var ret = [];
   var l = array.length;
   for ( var i=0; i<l; i++) {
@@ -18,7 +16,11 @@ function unique(str){
     }
     ret.push(array[i]);
   }
-  return ret.join('\n');
+  return ret;
+}
+// 去重
+function unique(str){
+  return uniqueArray(str.split('\n')).join('\n');
 }
 // 重复的
 function repeated(str){
@@ -32,7 +34,7 @@ function repeated(str){
       ret.push(o);
     }
   });
-  return ret.join('\n');
+  return uniqueArray(ret).join('\n');
 }
 // 顺序
 function sort(str){

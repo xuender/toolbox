@@ -1,13 +1,14 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>{% block title %}{% endblock %}Toolbox {{ ver }}</title>
+        <title id="title">Toolbox</title>
         <link href="css/bootstrap.css" rel="stylesheet"/>
         {% block css %}{% endblock %}
         <link href="css/popup.css" rel="stylesheet"/>
     </head>
     <body>
       {% block body %}{% endblock %}
+      <script src="js/base.js"></script>
       <script src="js/jquery-1.8.2.js"></script>
       <script src="js/bootstrap.js"></script>
       {% block script %}{% endblock %}

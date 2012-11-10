@@ -3,3 +3,9 @@ body {
     min-height: 400px;
     padding: 10px;
 }
+.one {
+    height: 270px;
+}
+textarea {
+    width: 350px;
+}

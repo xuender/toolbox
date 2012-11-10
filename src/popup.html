@@ -9,7 +9,11 @@
 {% block body %}
 <div class="btn-toolbar">
     <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="g_sort">
+        <h3 id="name"><img src="img/48.png"/></h3>
+    </div>
+    <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" 
+            id="g_sort">
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
@@ -19,7 +23,8 @@
         </ul>
     </div><!-- btn-group -->
     <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="g_unique">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" 
+            id="g_unique">
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
@@ -36,28 +41,47 @@
             <li><a href="#" id="trim_row"></a></li>
         </ul>
     </div><!-- btn-group -->
+    <div class="btn-group" id="b_one">
+        <a href="#" class="btn" id="swap"></a>
+    </div><!-- btn-group -->
 </div><!-- btn-toolbar -->
+<ul class="breadcrumb">
+    <span class="divider" id="split"> | </span>
+    <li><a href="#" class="btn btn-success" id="repeat"></a></li>
+    <li><a href="#" class="btn btn-warning btn-mini" id="clean"></a></li>
+</ul>
 <div class="row">
     <form class="form-horizontal">
         <div class="control-group">
-            <label class="control-label" for="input">输入</label>
+            <label class="control-label" for="input" 
+                id="input_label"></label>
             <div class="controls">
                 <textarea id="input" rows="5"></textarea>
                 <span class="help-block">
-                    <span class="badge badge-info" id="i-row">0</span> 行,
-                    <span class="badge badge-info" id="i-count">0</span> 字节
+                    <span class="badge badge-info" id="i-row">0</span>
+                    <span class="t_row"></span>,
+                    <span class="badge badge-info" id="i-count">0</span>
+                    <span class="t_byte"></span>
+                </span>
+            </div><!-- controls -->
+        </div><!-- control-group -->
+        <div class="control-group" id="outdiv">
+            <label class="control-label" for="output" 
+                id="output_label"></label>
+            <div class="controls">
+                <textarea id="output" rows="5"></textarea>
+                <span class="help-block">
+                    <span class="badge badge-info" id="o-row">0</span>
+                    <span class="t_row"></span>,
+                    <span class="badge badge-info" id="o-count">0</span>
+                    <span class="t_byte"></span>
                 </span>
             </div><!-- controls -->
         </div><!-- control-group -->
         <div class="control-group">
-            <label class="control-label" for="output">输出</label>
-            <div class="controls">
-                <textarea id="output" rows="5"></textarea>
-                <span class="help-block">
-                    <span class="badge badge-info" id="o-row">0</span> 行,
-                    <span class="badge badge-info" id="o-count">0</span> 字节
-                </span>
-            </div><!-- controls -->
+            <label class="checkbox" id="one_label">
+                <input type="checkbox" id="one"/>
+            </label>
         </div><!-- control-group -->
     </form>
 </div>

@@ -2,16 +2,109 @@
   "name": {
     "message": "工具箱"
   },
-  "description": {
-    "message": "Chrome 工具箱"
+  "title": {
+    "message": "工具箱 - 常用工具集"
   },
-  "reverse": {
-    "message": "逆转"
+  "g_sort": {
+    "message": "排序"
+  },
+  "g_sort_title": {
+    "message": "文本顺序调整"
+  },
+  "sort": {
+    "message": "顺序"
+  },
+  "sort_title": {
+    "message": "文本顺序排列"
   },
   "desc": {
     "message": "倒序"
   },
-  "sort": {
-    "message": "顺序"
+  "desc_title": {
+    "message": "文本倒序排列"
+  },
+  "reverse": {
+    "message": "逆转"
+  },
+  "reverse_title": {
+    "message": "文本顺序逆转"
+  },
+  "g_unique": {
+    "message": "去重"
+  },
+  "g_unique_title": {
+    "message": "文本重复处理"
+  },
+  "unique": {
+    "message": "唯一"
+  },
+  "unique_title": {
+    "message": "移除重复，确保唯一"
+  },
+  "repeated": {
+    "message": "重复"
+  },
+  "repeated_title": {
+    "message": "仅显示重复行"
+  },
+  "g_trim": {
+    "message": "修整"
+  },
+  "g_trim_title": {
+    "message": "文本修整"
+  },
+  "trim": {
+    "message": "首尾修整"
+  },
+  "trim_title": {
+    "message": "去除文本首尾空格"
+  },
+  "trim_row": {
+    "message": "逐行修整"
+  },
+  "trim_row_title": {
+    "message": "逐行去除文本首位空格"
+  },
+  "input_label": {
+    "message": "输入"
+  },
+  "input_title": {
+    "message": "使用复制粘帖输入待处理的文本"
+  },
+  "output_title": {
+    "message": "文本处理结果"
+  },
+  "output_label": {
+    "message": "输出"
+  },
+  "t_row": {
+    "message": "行"
+  },
+  "t_byte": {
+    "message": "字节"
+  },
+  "one_label": {
+    "message": "单输入框模式"
+  },
+  "swap": {
+    "message": "输入输出交换"
+  },
+  "swap_title": {
+    "message": "输入输出内容交换,可对输出结果进一步处理"
+  },
+  "repeat": {
+    "message": "重复命令"
+  },
+  "repeat_title": {
+    "message": "顺序执行右侧的命令"
+  },
+  "clean": {
+    "message": "清除命令"
+  },
+  "clean_title": {
+    "message": "清除右侧的历史命令"
+  },
+  "description": {
+    "message": "Chrome 工具箱"
   }
 }
