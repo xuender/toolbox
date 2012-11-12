@@ -11,3 +11,13 @@ _gaq.push(['_trackPageview']);
   var s = document.getElementsByTagName('script')[0]; 
   s.parentNode.insertBefore(ga, s);
 })();
+$(document).ready(function(){
+  $('.store').click(gotoStore);
+  ['store'].forEach(function(id){
+    $('#'+id).text(chrome.i18n.getMessage(id));
+  });
+});
+// 去往软件商店
+function gotoStore(){
+  _gaq.push(['_trackEvent', 'goto', 'store']);
+}

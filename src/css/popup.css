@@ -1,11 +1,16 @@
 body {
-    min-width: 600px;
+    min-width: 650px;
     min-height: 400px;
-    padding: 10px;
+}
+.title {
+    text-align: center;
 }
 .one {
     height: 270px;
 }
 textarea {
     width: 350px;
+}
+.main {
+    padding: 0px 10px 0px 10px;
 }

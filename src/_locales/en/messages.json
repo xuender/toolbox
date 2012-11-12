@@ -1,5 +1,170 @@
 {
-  "name":{
+  "name": {
     "message": "Toolbox"
+  },
+  "title": {
+    "message": "Toolbox - Useful tool set"
+  },
+  "g_sort": {
+    "message": "Sort"
+  },
+  "g_sort_title": {
+    "message": "Text in order to adjust"
+  },
+  "sort": {
+    "message": "Asc"
+  },
+  "sort_title": {
+    "message": "Text order"
+  },
+  "desc": {
+    "message": "Desc"
+  },
+  "desc_title": {
+    "message": "Text in reverse order"
+  },
+  "reverse": {
+    "message": "Reversal"
+  },
+  "reverse_title": {
+    "message": "Text order reversing"
+  },
+  "g_unique": {
+    "message": "Repeat"
+  },
+  "g_unique_title": {
+    "message": "Text repeat"
+  },
+  "unique": {
+    "message": "Unique"
+  },
+  "unique_title": {
+    "message": "Remove duplicate to ensure that only"
+  },
+  "repeated": {
+    "message": "Repeated"
+  },
+  "repeated_title": {
+    "message": "Show only duplicate rows"
+  },
+  "g_trim": {
+    "message": "Trim"
+  },
+  "g_trim_title": {
+    "message": "Text trimming"
+  },
+  "trim": {
+    "message": "Both trim"
+  },
+  "trim_title": {
+    "message": "Remove text trailing spaces"
+  },
+  "trim_row": {
+    "message": "Progressive trim"
+  },
+  "trim_row_title": {
+    "message": "Progressive removal of the text of the first spaces"
+  },
+  "input_label": {
+    "message": "Input"
+  },
+  "input_title": {
+    "message": "Copy and paste input pending text"
+  },
+  "output_title": {
+    "message": "Text processing results"
+  },
+  "output_label": {
+    "message": "Output"
+  },
+  "t_row": {
+    "message": "row"
+  },
+  "t_byte": {
+    "message": "byte"
+  },
+  "one_label": {
+    "message": "Single text area mode"
+  },
+  "swap": {
+    "message": "Swap IO"
+  },
+  "swap_title": {
+    "message": "Input and output content exchange, further processing of the output results"
+  },
+  "repeat": {
+    "message": "Repeat"
+  },
+  "repeat_title": {
+    "message": "Order of the implementation of the right of commands"
+  },
+  "clean": {
+    "message": "Clear"
+  },
+  "clean_title": {
+    "message": "Clear the right side of history command"
+  },
+  "new_tab_title": {
+    "message": "Open in new tab"
+  },
+  "sha1": {
+    "message": "SHA1"
+  },
+  "md5": {
+    "message": "MD5"
+  },
+  "sha1_title": {
+    "message": "SHA1 generates"
+  },
+  "md5_title": {
+    "message": "Md5 generates"
+  },
+  "g_hash": {
+    "message": "Hash"
+  },
+  "g_hash_title": {
+    "message": "Generate the text hash code"
+  },
+  "store": {
+    "message": "Chrome Webstore"
+  },
+  "g_beautify": {
+    "message": "Beautify"
+  },
+  "g_beautify_title": {
+    "message": "Code for beautify"
+  },
+  "js": {
+    "message": "JavaScript"
+  },
+  "css": {
+    "message": "CSS"
+  },
+  "html": {
+    "message": "HTML"
+  },
+  "json": {
+    "message": "JSON"
+  },
+  "json_title": {
+    "message": "JSON code for beautify"
+  },
+  "js_title": {
+    "message": "JavaScript code for beautify"
+  },
+  "css_title": {
+    "message": "Stylesheet code for beautify"
+  },
+  "html_title": {
+    "message": "HTML code for beautify"
+  },
+  "blank": {
+    "message": "Blank"
+  },
+  "blank_title": {
+    "message": "Remove blank lines"
+  },
+  "description": {
+    "message": "Chrome Toolbox, Useful tool set. Commonly used text processing tools. ps:sorting, de-emphasis, trimming, md5, sha1, Code format"
   }
 }

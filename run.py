@@ -24,7 +24,7 @@ if __name__ == '__main__':
             d = True
         if arg=='b':
             b = True
-    dev = ChromeDev(debug = d, ver=ver())
+    dev = ChromeDev(debug = d, ver='0.1.%s' % ver())
     if b:
         dev.build()
     dev.run()

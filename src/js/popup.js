@@ -1,35 +1,31 @@
 $(document).ready(function(){
   i18n();
+  initCommand();
   initBind();
   breadcrumb();
   if(localStorage.one == 'checked'){
     $('#one').attr("checked", 'checked');
-    oneArea();
   }
+  resetArea();
 });
 $(window).load(function(){
   $('#input').focus();
   chrome.i18n.getAcceptLanguages(function(list){
-    list.split(',').forEach(function(l){
+    list.forEach(function(l){
       _gaq.push(['_trackEvent', 'locale', l]);
     });
   });
 });
 // 多国语言
 function i18n(){
-  ['sort', 'desc', 'reverse', 'unique', 'repeated', 'trim', 'trim_row',
-    'input_label', 'output_label', 'swap', 'repeat', 'clean', 'title' 
-      ].forEach(function(id){
-        $('#'+id).text(chrome.i18n.getMessage(id));
-      });
-  ['g_sort', 'sort', 'desc', 'reverse', 'g_unique', 'unique', 
-    'repeated', 'g_trim', 'trim', 'trim_row', 'input', 'output',
-    'repeat', 'clean', 'swap'].forEach(function(id){
+  ['input_label', 'output_label', 'swap', 'repeat', 'clean', 'title' 
+    ].forEach(function(id){
+      $('#'+id).text(chrome.i18n.getMessage(id));
+    });
+  ['input', 'output',
+    'repeat', 'clean', 'swap', 'new_tab'].forEach(function(id){
       $('#'+id).attr('title', chrome.i18n.getMessage(id+'_title'));
     });
-  ['g_sort', 'g_trim', 'g_unique'].forEach(function(id){
-    $('#'+id).prepend(chrome.i18n.getMessage(id));
-  });
   ['one_label', 'name'].forEach(function(id){
     $('#'+id).append(chrome.i18n.getMessage(id));
   });
@@ -45,8 +41,40 @@ var COMMAND = {
   'desc': desc,
   'reverse': reverse,
   'repeated': repeated,
-  'trim_row': trim_row
+  'trim_row': trim_row,
+  'md5': CryptoJS.MD5,
+  'sha1': CryptoJS.SHA1,
+  'js': js_beautify,
+  'css': css_beautify,
+  'html': style_html,
+  'json': formatJson,
+  'blank': removeBlankLine,
 };
+var GROUPS =  [
+{'g': 'g_sort', 'c':['sort', 'desc', 'reverse']}, 
+{'g': 'g_unique', 'c':['unique', 'repeated']},
+{'g': 'g_trim', 'c':['trim', 'trim_row', 'blank']},
+{'g': 'g_hash', 'c':['md5', 'sha1']},
+{'g': 'g_beautify', 'c':['js', 'css', 'html', 'json']},
+  ];
+// 初始化命令
+function initCommand(){
+  GROUPS.forEach(function(group){
+    var id = group['g'];
+    var div = $('<div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="' +
+      id + '" title="' + chrome.i18n.getMessage(id+'_title')+
+      '">'+chrome.i18n.getMessage(id) +
+      ' <span class="caret"></span></a></div>');
+    var ul = $('<ul class="dropdown-menu"></ul>');
+    group['c'].forEach(function(c){
+      $('<li><a href="#" title="' + chrome.i18n.getMessage(c + '_title')
+        + '" id="' + c + '">'+
+        chrome.i18n.getMessage(c) + '</li>').appendTo(ul);
+    });
+    ul.appendTo(div);
+    div.appendTo($('#toolbar'));
+  });
+}
 // 事件绑定
 function initBind(){
   $('#input').keyup(countInput);
@@ -55,12 +83,21 @@ function initBind(){
   $('#repeat').click(repeat);
   $('#clean').click(clean);
   $('#swap').click(swap);
+  $('#new_tab').click(newTab);
   for(var id in COMMAND){
     $('#'+id).click(clickHandle);
   }
   $('.old>a').live('click', function() { 
     run($(this).attr('data-id'));
+    $('#input').focus();
   });
+}
+// 新窗口
+function newTab(){
+  chrome.tabs.create({
+    url: 'popup.html'
+  });
+  _gaq.push(['_trackEvent', 'option', 'new_tab']);
 }
 // 显示面包屑
 function breadcrumb(){
@@ -68,29 +105,51 @@ function breadcrumb(){
   if(localStorage.history){
     $('.breadcrumb').show();
     var old = localStorage.history.split(',');
-    console.debug(old);
     old.forEach(function(id){
-      console.debug(id);
-      $('<li class="old"><a href="#" class="btn" data-id="'+
+      $('<li class="old"><a href="#" class="btn btn-mini" data-id="'+
         id + '">' +
         chrome.i18n.getMessage(id) + '</a></li>').insertBefore('#split');
     });
   }else{
     $('.breadcrumb').hide();
   }
+  resetArea();
+}
+// 重置窗口
+function resetArea(){
+  var height = 0;
+  $('body').children().each(function(){
+    if(!$(this).hasClass('row') && !$(this).is(":hidden")){
+      console.info($(this));
+      console.info(height);
+      height += $(this).height();
+    }
+  });
+  $('#input').width(window.innerWidth - 230);
+  $('#output').width(window.innerWidth - 230);
+  if($('#one').attr("checked")){
+    height += 166;
+    $('#outdiv').hide();
+    //$('#input').addClass('one');
+    $('#input').height(window.innerHeight - height);
+    $('#b_one').hide();
+    _gaq.push(['_trackEvent', 'option', 'one']);
+  }else{
+    height += 226;
+    $('#outdiv').show();
+    //$('#input').removeClass('one');
+    $('#input').height((window.innerHeight - height) / 2);
+    $('#output').height($('#input').height());
+    $('#b_one').show();
+    _gaq.push(['_trackEvent', 'option', 'two']);
+  }
 }
 // 单窗口模式
-function oneArea(){
+function oneArea(){ resetArea();
   if($('#one').attr("checked")){
-    $('#outdiv').hide();
-    $('#input').addClass('one');
-    $('#b_one').hide();
-    _gaq.push(['_trackEvent', 'one', 'true']);
+    _gaq.push(['_trackEvent', 'option', 'one']);
   }else{
-    $('#outdiv').show();
-    $('#input').removeClass('one');
-    $('#b_one').show();
-    _gaq.push(['_trackEvent', 'one', 'false']);
+    _gaq.push(['_trackEvent', 'option', 'two']);
   }
   $('#input').focus();
   localStorage.one = $('#one').attr("checked");

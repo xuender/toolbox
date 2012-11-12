@@ -17,7 +17,7 @@ class ChromeDev(pyinotify.ProcessEvent):
         self.debug = debug
         if debug:
             print '开发模式，不压缩js、css和html'
-        self.ver = ver + 1
+        self.ver = ver
         self.src = os.path.join(os.getcwd(), src)
         print '监听目录 %s' % self.src
         self.out = os.path.join(os.getcwd(), out)

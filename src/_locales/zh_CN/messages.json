@@ -104,7 +104,67 @@
   "clean_title": {
     "message": "清除右侧的历史命令"
   },
+  "new_tab_title": {
+    "message": "在新的页面打开"
+  },
+  "sha1": {
+    "message": "SHA1摘要"
+  },
+  "md5": {
+    "message": "MD5摘要"
+  },
+  "sha1_title": {
+    "message": "生成SHA1摘要"
+  },
+  "md5_title": {
+    "message": "生成MD5摘要"
+  },
+  "g_hash": {
+    "message": "摘要"
+  },
+  "g_hash_title": {
+    "message": "生成字串摘要码"
+  },
+  "store": {
+    "message": "Chrome 网上应用商店"
+  },
+  "g_beautify": {
+    "message": "格式化"
+  },
+  "g_beautify_title": {
+    "message": "代码格式化"
+  },
+  "js": {
+    "message": "JavaScript"
+  },
+  "css": {
+    "message": "CSS"
+  },
+  "html": {
+    "message": "HTML"
+  },
+  "json": {
+    "message": "JSON"
+  },
+  "json_title": {
+    "message": "JSON代码格式化"
+  },
+  "js_title": {
+    "message": "JavaScript代码格式化"
+  },
+  "css_title": {
+    "message": "Stylesheet代码格式化"
+  },
+  "html_title": {
+    "message": "HTML代码格式化"
+  },
+  "blank": {
+    "message": "删除空行"
+  },
+  "blank_title": {
+    "message": "删除空白行"
+  },
   "description": {
-    "message": "Chrome 工具箱"
+    "message": "Chrome 工具箱,有用的工具集，常用文本处理工具,例如：排序,去重,修整,MD5摘要,SHA1摘要，代码格式化"
   }
 }

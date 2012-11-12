@@ -4,52 +4,41 @@
 {% endblock %}
 {% block script %}
 <script src="js/utils.js"></script>
+<script src="js/md5.js"></script>
+<script src="js/sha1.js"></script>
+<script src="js/beautify.js"></script>
+<script src="js/beautify-css.js"></script>
+<script src="js/beautify-html.js"></script>
 <script src="js/popup.js"></script>
 {% endblock %}
 {% block body %}
-<div class="btn-toolbar">
-    <div class="btn-group">
-        <h3 id="name"><img src="img/48.png"/></h3>
-    </div>
-    <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" 
-            id="g_sort">
-            <span class="caret"></span>
+<div>
+    <div id="b_sys" class="pull-right main">
+        <a href="#" class="btn btn-mini" id="new_tab">
+            <i class="icon-share"></i>
         </a>
-        <ul class="dropdown-menu">
-            <li><a href="#" id="sort"></a></li>
-            <li><a href="#" id="desc"></a></li>
-            <li><a href="#" id="reverse"></a></li>
-        </ul>
-    </div><!-- btn-group -->
-    <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" 
-            id="g_unique">
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="#" id="unique"></a></li>
-            <li><a href="#" id="repeated"></a></li>
-        </ul>
-    </div><!-- btn-group -->
-    <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="g_trim">
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="#" id="trim"></a></li>
-            <li><a href="#" id="trim_row"></a></li>
-        </ul>
-    </div><!-- btn-group -->
-    <div class="btn-group" id="b_one">
-        <a href="#" class="btn" id="swap"></a>
-    </div><!-- btn-group -->
-</div><!-- btn-toolbar -->
-<ul class="breadcrumb">
-    <span class="divider" id="split"> | </span>
-    <li><a href="#" class="btn btn-success" id="repeat"></a></li>
-    <li><a href="#" class="btn btn-warning btn-mini" id="clean"></a></li>
-</ul>
+    </div><!-- b_sys -->
+    <a class="store title" target="_blank" 
+        href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl">
+        <h3>
+            <img src="img/48.png" align="bottom"/>
+            <span id="name"></span>
+            <small>{{ ver }}</small>
+        </h3>
+    </a>
+    <div class="btn-toolbar main" id="toolbar">
+        <div class="btn-group">
+        </div>
+        <div class="btn-group" id="b_one">
+            <a href="#" class="btn" id="swap"></a>
+        </div><!-- btn-group -->
+    </div><!-- btn-toolbar -->
+    <ul class="breadcrumb">
+        <span class="divider" id="split"> | </span>
+        <li><a href="#" class="btn btn-success btn-mini" id="repeat"></a></li>
+        <li><a href="#" class="btn btn-warning btn-mini" id="clean"></a></li>
+    </ul>
+</div>
 <div class="row">
     <form class="form-horizontal">
         <div class="control-group">
@@ -79,9 +68,11 @@
             </div><!-- controls -->
         </div><!-- control-group -->
         <div class="control-group">
-            <label class="checkbox" id="one_label">
-                <input type="checkbox" id="one"/>
-            </label>
+            <div class="controls">
+                <label class="checkbox" id="one_label">
+                    <input type="checkbox" id="one"/>
+                </label>
+            </div><!-- controls -->
         </div><!-- control-group -->
     </form>
 </div>
