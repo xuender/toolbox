@@ -120,8 +120,6 @@ function resetArea(){
   var height = 0;
   $('body').children().each(function(){
     if(!$(this).hasClass('row') && !$(this).is(":hidden")){
-      console.info($(this));
-      console.info(height);
       height += $(this).height();
     }
   });
