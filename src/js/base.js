@@ -12,12 +12,13 @@ _gaq.push(['_trackPageview']);
   s.parentNode.insertBefore(ga, s);
 })();
 $(document).ready(function(){
-  $('.store').click(gotoStore);
-  ['store'].forEach(function(id){
+  $('#store').click(gotoId);
+  $('#online').click(gotoId);
+  ['store', 'online'].forEach(function(id){
     $('#'+id).text(chrome.i18n.getMessage(id));
   });
 });
 // 去往软件商店
-function gotoStore(){
-  _gaq.push(['_trackEvent', 'goto', 'store']);
+function gotoId(e){
+  _gaq.push(['_trackEvent', 'goto', e.srcElement.id]);
 }

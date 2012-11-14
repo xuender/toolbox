@@ -37,6 +37,8 @@ function i18n(){
 var COMMAND = {
   'trim': $.trim,
   'unique': unique,
+  'sortNumber': sortNumber,
+  'descNumber': descNumber,
   'sort': sort,
   'desc': desc,
   'reverse': reverse,
@@ -51,7 +53,7 @@ var COMMAND = {
   'blank': removeBlankLine,
 };
 var GROUPS =  [
-{'g': 'g_sort', 'c':['sort', 'desc', 'reverse']}, 
+{'g': 'g_sort', 'c':['sort', 'sortNumber', 'desc', 'descNumber', 'reverse']}, 
 {'g': 'g_unique', 'c':['unique', 'repeated']},
 {'g': 'g_trim', 'c':['trim', 'trim_row', 'blank']},
 {'g': 'g_hash', 'c':['md5', 'sha1']},

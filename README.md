@@ -12,6 +12,7 @@ beantify code.
 change
 ------
 
+* 0.1.28 number sort
 * 0.1.20 remove blank lines, beautify: js, css, html, json
 * 0.1.13 md5, sha1
 * 0.1.10 sort, unique, trim

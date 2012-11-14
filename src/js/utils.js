@@ -47,6 +47,26 @@ function repeated(str){
   });
   return uniqueArray(ret).join('\n');
 }
+// 数字比较
+function compareNumber(a, b){
+  var t = parseFloat(a);
+  if(t){
+    a = t
+  }
+  t = parseFloat(b);
+  if(t){
+    b = t
+  }
+  return a - b;
+}
+// 数字顺序
+function sortNumber(str){
+  return str.split('\n').sort(compareNumber).join('\n')
+}
+// 数字倒序
+function descNumber(str){
+  return str.split('\n').sort(compareNumber).reverse().join('\n')
+}
 // 顺序
 function sort(str){
   return str.split('\n').sort().join('\n')

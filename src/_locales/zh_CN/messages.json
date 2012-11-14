@@ -23,6 +23,18 @@
   "desc_title": {
     "message": "文本倒序排列"
   },
+  "sortNumber": {
+    "message": "数字顺序"
+  },
+  "sortNumber_title": {
+    "message": "文本按照数字顺序排列"
+  },
+  "descNumber": {
+    "message": "数字倒序"
+  },
+  "descNumber_title": {
+    "message": "文本按照数字倒序排列"
+  },
   "reverse": {
     "message": "逆转"
   },
@@ -163,6 +175,9 @@
   },
   "blank_title": {
     "message": "删除空白行"
+  },
+  "online": {
+    "message": "在线版工具箱"
   },
   "description": {
     "message": "Chrome 工具箱,有用的工具集，常用文本处理工具,例如：排序,去重,修整,MD5摘要,SHA1摘要，代码格式化"
