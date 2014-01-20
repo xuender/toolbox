@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="toolbox" ng-csp>
+  <head>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/popup.min.css" rel="stylesheet"/>
+    <link href="css/base.min.css" rel="stylesheet"/>
+    <title id="title">工具箱</title>
+  </head>
+  <body ng-controller="ToolboxCtrl">
+    <button ng-click="alert()">xxxalert</button>
+    <div>
+      <div id="b_sys" class="pull-right main">
+        <a href="#" class="btn btn-mini" id="new_tab">
+          <i class="icon-share"></i>
+        </a>
+      </div><!-- b_sys -->
+      <h3>
+        <img src="img/48.png" align="bottom"/>
+        <span id="name">Toolbox</span>
+        <small>34</small>
+      </h3>
+      <div class="btn-toolbar main" id="toolbar">
+        <div class="btn-group" id="b_one">
+          <a href="#" class="btn" id="swap"></a>
+        </div><!-- btn-group -->
+      </div><!-- btn-toolbar -->
+      <ul class="breadcrumb">
+        <span class="divider" id="split"> | </span>
+        <li><a href="#" class="btn btn-success btn-mini" id="repeat"></a></li>
+        <li><a href="#" class="btn btn-warning btn-mini" id="clean"></a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="input" 
+            id="input_label"></label>
+          <div class="controls">
+            <textarea id="input" rows="5"></textarea>
+            <span class="help-block">
+              <span class="badge badge-info" id="i-row">0</span>
+              <span class="t_row"></span>,
+              <span class="badge badge-info" id="i-count">0</span>
+              <span class="t_byte"></span>
+            </span>
+          </div><!-- controls -->
+        </div><!-- control-group -->
+        <div class="control-group" id="outdiv">
+          <label class="control-label" for="output" 
+            id="output_label"></label>
+          <div class="controls">
+            <textarea id="output" rows="5"></textarea>
+            <span class="help-block">
+              <span class="badge badge-info" id="o-row">0</span>
+              <span class="t_row"></span>,
+              <span class="badge badge-info" id="o-count">0</span>
+              <span class="t_byte"></span>
+            </span>
+          </div><!-- controls -->
+        </div><!-- control-group -->
+        <div class="control-group">
+          <div class="controls">
+            <label class="checkbox" id="one_label">
+              <input type="checkbox" id="one"/>
+            </label>
+          </div><!-- controls -->
+        </div><!-- control-group -->
+      </form>
+    </div>
+    <footer>
+      <div>
+        <a id="online" target="_blank" href="http://xuender.me/toolbox"></a>
+      </div>
+      <div>
+        <a id="store" target="_blank" href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl"></a>
+      </div>
+    </footer>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/ui-bootstrap-tpls.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

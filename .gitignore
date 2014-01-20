@@ -27,4 +27,6 @@ pip-log.txt
 .mr.developer.cfg
 
 #chrome dev
-out
+dist
+bower_components
+node_modules
