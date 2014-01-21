@@ -25,11 +25,3 @@ class Command
     Command.history[@name].command()
 
 class Divider extends Command
-
-class Trim extends Command
-  command: ->
-    @scope.output = $.trim(@scope.input)
-
-class TrimRow extends Command
-  command: ->
-    @scope.output = ($.trim(i) for i in @scope.input.split('\n')).join('\n')

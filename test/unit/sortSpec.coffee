@@ -19,7 +19,7 @@ describe 'command', ->
       input: 'aa\n22\n110'
     s = new SortNumber(scope, 'SortNumber')
     s.run()
-    expect(scope.output).toEqual('aa\n22\n110')
+    expect(scope.output).toEqual('22\n110\naa')
 
   it 'desc', ->
     scope =
@@ -35,7 +35,7 @@ describe 'command', ->
       input: 'aa\n210\n31'
     s = new DescNumber(scope, 'Desc')
     s.run()
-    expect(scope.output).toEqual('210\n31\naa')
+    expect(scope.output).toEqual('aa\n210\n31')
 
   it 'reverse', ->
     scope =

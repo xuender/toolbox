@@ -21,6 +21,7 @@ module.exports = function(config) {
       'bower_components/js-utils/js/chrome.min.js',
       'src/js/command.coffee',
       'src/js/sort.coffee',
+      'src/js/trim.coffee',
       'test/**/*Spec.coffee'
     ],
 

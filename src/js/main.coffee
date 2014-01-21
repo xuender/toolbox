@@ -62,6 +62,7 @@ ToolboxCtrl = ($scope)->
       items: [
         new Trim($scope, chrome.i18n.getMessage('trim'))
         new TrimRow($scope, chrome.i18n.getMessage('trim_row'))
+        new Blank($scope, chrome.i18n.getMessage('blank'))
       ]
     }
     {

@@ -8,7 +8,9 @@ Distributed under terms of the MIT license.
 compareNumber = (a, b)->
   a = parseFloat(a) if parseFloat(a)
   b = parseFloat(b) if parseFloat(b)
-  a - b
+  if typeof(a) == 'number' and typeof(b) == 'number'
+    return a - b
+  if a.toString() > b.toString() then 1 else -1
 
 class Sort extends Command
   command: ->
@@ -30,4 +32,3 @@ class DescNumber extends Command
 class Reverse extends Command
   command: ->
     @scope.output = @scope.input.split('\n').reverse().join('\n')
-
