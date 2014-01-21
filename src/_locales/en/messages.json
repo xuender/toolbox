@@ -1,4 +1,16 @@
 {
+  "feature": {
+    "message": "Feature"
+  },
+  "question": {
+    "message": "Question"
+  },
+  "bug": {
+    "message": "Bug"
+  },
+  "reviews": {
+    "message": "Reviews"
+  },
   "name": {
     "message": "Toolbox"
   },

@@ -1,4 +1,16 @@
 {
+  "feature": {
+    "message": "功能建议"
+  },
+  "question": {
+    "message": "问题"
+  },
+  "bug": {
+    "message": "错误"
+  },
+  "reviews": {
+    "message": "评论"
+  },
   "name": {
     "message": "工具箱"
   },

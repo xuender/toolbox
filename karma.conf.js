@@ -19,7 +19,8 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/js-utils/js/js-utils.min.js',
       'bower_components/js-utils/js/chrome.min.js',
-      'src/extension/js/*.coffee',
+      'src/js/command.coffee',
+      'src/js/sort.coffee',
       'test/**/*Spec.coffee'
     ],
 
@@ -37,7 +38,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 9933,
+    port: 9433,
 
 
     // enable / disable colors in the output (reporters and logs)

@@ -1,3 +1,12 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
 footer {
     padding: 20px 0;
     margin-top: 0px;
@@ -11,12 +20,6 @@ body {
     min-width: 770px;
     min-height: 700px;
 }
-.title {
+h3 {
     text-align: center;
-}
-.one {
-    height: 270px;
-}
-textarea {
-    width: 350px;
 }

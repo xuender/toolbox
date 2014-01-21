@@ -14,22 +14,22 @@ class Command
 
   run: ->
     this.command()
+    if @scope.one
+      @scope.input = @scope.output
     console.debug " #{@name} run."
-    if this != Command
+    if this instanceof Command and this.constructor != Command
       Command.push(@name, this)
       @scope.history.push(new Command(@scope, @name))
 
   command: ->
     Command.history[@name].command()
 
-class Sort extends Command
-  command: ->
-    @scope.output = @scope.input.split('\n').sort().join('\n')
-
-class Desc extends Command
-  command: ->
-    @scope.output = @scope.input.split('\n').sort().reverse().join('\n')
+class Divider extends Command
 
 class Trim extends Command
   command: ->
     @scope.output = $.trim(@scope.input)
+
+class TrimRow extends Command
+  command: ->
+    @scope.output = ($.trim(i) for i in @scope.input.split('\n')).join('\n')

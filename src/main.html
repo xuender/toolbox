@@ -6,33 +6,48 @@
     <title id="title">工具箱</title>
   </head>
   <body ng-controller="ToolboxCtrl">
-    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <header class="navbar navbar-default navbar-fixed-top" role="banner">
       <div class="container">
         <nav class="collapse navbar-collapse" role="navigation">
           <ul class="nav navbar-nav">
+            <li class="dropdown" ng-repeat="g in commands">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {{ g.title }}
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li ng-class="{divider:i.name == ''}" ng-repeat="i in g.items">
+                  <a href="#" ng-click="i.run()" ng-hide="i.name == ''">
+                    {{ i.name }}
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
             <li>
-              <a id="a_reviews" target="_blank"
+              <a  target="_blank"
               href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl/reviews">
                 <i class="glyphicon glyphicon-star"></i>
                 <span id="reviews">评论</span>
               </a>
             </li>
             <li>
-              <a id="a_bug" target="_blank"
+              <a target="_blank"
               href="https://chrome.google.com/webstore/support/hbkboegfdkllhmokangamapokbnnhfbl?#bug">
                 <i class="glyphicon glyphicon-plus-sign"></i>
                 <span id="bug">错误</span>
               </a>
             </li>
             <li>
-              <a id="a_question" target="_blank"
+              <a target="_blank"
               href="https://chrome.google.com/webstore/support/hbkboegfdkllhmokangamapokbnnhfbl?#question">
                 <i class="glyphicon glyphicon-question-sign"></i>
                 <span id="question">问题</span>
               </a>
             </li>
             <li>
-              <a id="a_feature" target="_blank"
+              <a target="_blank"
               href="https://chrome.google.com/webstore/support/hbkboegfdkllhmokangamapokbnnhfbl?#feature">
                 <i class="glyphicon glyphicon-heart"></i>
                 <span id="feature">功能</span>
@@ -42,54 +57,37 @@
         </nav>
       </div><!-- container -->
     </header>
-    <div class="container">
-      <h3>
-        <img src="img/48.png" align="bottom"/>
-        <span id="name">Toolbox</span>
-        <small>34</small>
-      </h3>
-      <div class="btn-toolbar" role="toolbar">
+    <h3>
+      <img src="img/48.png" align="bottom"/>
+      <span id="name">Toolbox</span>
+      <small>34</small>
+    </h3>
+    <ol class="breadcrumb">
+      <li>
         <div class="btn-group">
-          <div class="btn-group" ng-repeat="g in commands">
-            <button class="btn btn-default dropdown-toggle"
-            data-toggle="dropdown">
-              {{ g.title }}
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li ng-repeat="i in g.items">
-                <a href="#" ng-click="i.run()">{{ i.name }}</a>
-              </li>
-            </ul>
-          </div><!-- btn-group -->
-        </div><!-- btn-group -->
-      </div><!-- btn-toolbar -->
-      <div class="btn-toolbar" role="toolbar">
-        <div class="btn-group">
-          <a href="#" class="btn btn-info btn-xs"
-          ng-click="h.run()" ng-repeat="h in history">
-            {{ h.name }}
-          </a>
-        </div><!-- btn-group -->
-        <div class="btn-group">
-          <a href="#" class="btn btn-success btn-xs" id="repeat"
-          ng-click="repeat()"
-          >
+          <button class="btn btn-success btn-xs" id="repeat"
+          ng-click="repeat()">
             repeat
-          </a>
-          <a href="#" class="btn btn-warning btn-xs"
+          </button>
+          <button class="btn btn-warning btn-xs" id="clean"
           ng-click="clean()">
             clean
-          </a>
+          </button>
         </div><!-- btn-group -->
-      </div><!-- btn-toolbar -->
-    </div><!-- container -->
+      </li>
+      <li ng-repeat="h in history">
+        <a href="#" class="btn btn-info btn-xs"
+        ng-click="h.run()">
+          {{ h.name }}
+        </a>
+      </li>
+    </ol>
     <form role="form">
       <div class="form-group">
-        <label for="input" id="input_label">
+        <label for="input" id="input_label" ng-hide="one">
           input
         </label>
-        <textarea id="input" class="form-control" rows="5"
+        <textarea class="form-control" rows="{{ rows }}"
           ng-model="input"></textarea>
         <span class="help-block">
           <span class="badge badge-info">{{ inputRow }}</span>
@@ -98,11 +96,11 @@
           <span class="t_byte">字节</span>
         </span>
       </div><!-- form-group -->
-      <div class="form-group" id="outdiv">
+      <div class="form-group" ng-hide="one">
         <label for="output" id="output_label">
           output
         </label>
-        <textarea id="output" class="form-control" rows="5"
+        <textarea class="form-control" rows="5"
         ng-model="output"></textarea>
         <span class="help-block">
           <span class="badge badge-info">{{ outputRow }}</span>
@@ -112,27 +110,28 @@
         </span>
       </div><!-- form-group -->
       <div class="form-group">
-        <input type="checkbox" id="one"/>
-        <label class="checkbox-inline" id="one_label" for="one">
-          单输入框模式
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model="one" value="true"/>
+          <span id="one_label">单输入框模式</span>
         </label>
       </div><!-- control-group -->
     </form>
     <footer>
       <div>
         <a id="online" target="_blank" href="http://xuender.me/toolbox">
-        copyright
-        </a>
-      </div>
-      <div>
-        <a id="store" target="_blank" href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl">
-        Chrome商店
-        </a>
-      </div>
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/ui-bootstrap-tpls.min.js"></script>
-    <script src="js/main.min.js"></script>
-  </body>
+      copyright
+      </a>
+    </div>
+    <div>
+      <a id="store" target="_blank" href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl">
+      Chrome商店
+      </a>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/chrome.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/ui-bootstrap-tpls.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
 </html>

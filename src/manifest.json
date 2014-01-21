@@ -12,6 +12,9 @@
             ]
         }
     },
+    "permissions": [
+      "storage"
+    ],
     "icons": {
         "16": "img/16.png",
         "48": "img/48.png",

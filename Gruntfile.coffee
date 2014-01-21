@@ -65,6 +65,16 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      utils:
+        files: [
+          cwd: 'bower_components/js-utils/js'
+          src: [
+            'chrome.min.js'
+          ]
+          dest: 'dist/js'
+          expand: true
+          filter: 'isFile'
+        ]
       bootstrap:
         files: [
           cwd: 'bower_components/bootstrap/dist/'
@@ -110,6 +120,7 @@ module.exports = (grunt)->
         files:
           'dist/js/main.min.js': [
             'src/js/command.coffee'
+            'src/js/sort.coffee'
             'src/js/main.coffee'
           ]
       background:
@@ -199,4 +210,5 @@ module.exports = (grunt)->
     'dist'
     'bump'
   ])
+  grunt.registerTask('travis', 'travis test', ['karma:travis'])
   grunt.registerTask('default', ['dist'])
