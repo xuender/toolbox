@@ -109,6 +109,7 @@ module.exports = (grunt)->
       main:
         files:
           'dist/js/main.min.js': [
+            'src/js/command.coffee'
             'src/js/main.coffee'
           ]
       background:

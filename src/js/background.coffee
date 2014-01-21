@@ -7,8 +7,8 @@ Distributed under terms of the MIT license.
 chrome.app.runtime.onLaunched.addListener(->
   chrome.app.window.create('main.html',
     'bounds':
-      'width': 650
-      'height': 600
+      'width': 770
+      'height': 700
   )
 )
 

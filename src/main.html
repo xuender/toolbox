@@ -3,82 +3,136 @@
   <head>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/popup.min.css" rel="stylesheet"/>
-    <link href="css/base.min.css" rel="stylesheet"/>
     <title id="title">工具箱</title>
   </head>
   <body ng-controller="ToolboxCtrl">
-    <button ng-click="alert()">xxxalert</button>
-    <div>
-      <div id="b_sys" class="pull-right main">
-        <a href="#" class="btn btn-mini" id="new_tab">
-          <i class="icon-share"></i>
-        </a>
-      </div><!-- b_sys -->
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+      <div class="container">
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <a id="a_reviews" target="_blank"
+              href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl/reviews">
+                <i class="glyphicon glyphicon-star"></i>
+                <span id="reviews">评论</span>
+              </a>
+            </li>
+            <li>
+              <a id="a_bug" target="_blank"
+              href="https://chrome.google.com/webstore/support/hbkboegfdkllhmokangamapokbnnhfbl?#bug">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                <span id="bug">错误</span>
+              </a>
+            </li>
+            <li>
+              <a id="a_question" target="_blank"
+              href="https://chrome.google.com/webstore/support/hbkboegfdkllhmokangamapokbnnhfbl?#question">
+                <i class="glyphicon glyphicon-question-sign"></i>
+                <span id="question">问题</span>
+              </a>
+            </li>
+            <li>
+              <a id="a_feature" target="_blank"
+              href="https://chrome.google.com/webstore/support/hbkboegfdkllhmokangamapokbnnhfbl?#feature">
+                <i class="glyphicon glyphicon-heart"></i>
+                <span id="feature">功能</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- container -->
+    </header>
+    <div class="container">
       <h3>
         <img src="img/48.png" align="bottom"/>
         <span id="name">Toolbox</span>
         <small>34</small>
       </h3>
-      <div class="btn-toolbar main" id="toolbar">
-        <div class="btn-group" id="b_one">
-          <a href="#" class="btn" id="swap"></a>
+      <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+          <div class="btn-group" ng-repeat="g in commands">
+            <button class="btn btn-default dropdown-toggle"
+            data-toggle="dropdown">
+              {{ g.title }}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="i in g.items">
+                <a href="#" ng-click="i.run()">{{ i.name }}</a>
+              </li>
+            </ul>
+          </div><!-- btn-group -->
         </div><!-- btn-group -->
       </div><!-- btn-toolbar -->
-      <ul class="breadcrumb">
-        <span class="divider" id="split"> | </span>
-        <li><a href="#" class="btn btn-success btn-mini" id="repeat"></a></li>
-        <li><a href="#" class="btn btn-warning btn-mini" id="clean"></a></li>
-      </ul>
-    </div>
-    <div class="row">
-      <form class="form-horizontal">
-        <div class="control-group">
-          <label class="control-label" for="input" 
-            id="input_label"></label>
-          <div class="controls">
-            <textarea id="input" rows="5"></textarea>
-            <span class="help-block">
-              <span class="badge badge-info" id="i-row">0</span>
-              <span class="t_row"></span>,
-              <span class="badge badge-info" id="i-count">0</span>
-              <span class="t_byte"></span>
-            </span>
-          </div><!-- controls -->
-        </div><!-- control-group -->
-        <div class="control-group" id="outdiv">
-          <label class="control-label" for="output" 
-            id="output_label"></label>
-          <div class="controls">
-            <textarea id="output" rows="5"></textarea>
-            <span class="help-block">
-              <span class="badge badge-info" id="o-row">0</span>
-              <span class="t_row"></span>,
-              <span class="badge badge-info" id="o-count">0</span>
-              <span class="t_byte"></span>
-            </span>
-          </div><!-- controls -->
-        </div><!-- control-group -->
-        <div class="control-group">
-          <div class="controls">
-            <label class="checkbox" id="one_label">
-              <input type="checkbox" id="one"/>
-            </label>
-          </div><!-- controls -->
-        </div><!-- control-group -->
-      </form>
-    </div>
+      <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+          <a href="#" class="btn btn-info btn-xs"
+          ng-click="h.run()" ng-repeat="h in history">
+            {{ h.name }}
+          </a>
+        </div><!-- btn-group -->
+        <div class="btn-group">
+          <a href="#" class="btn btn-success btn-xs" id="repeat"
+          ng-click="repeat()"
+          >
+            repeat
+          </a>
+          <a href="#" class="btn btn-warning btn-xs"
+          ng-click="clean()">
+            clean
+          </a>
+        </div><!-- btn-group -->
+      </div><!-- btn-toolbar -->
+    </div><!-- container -->
+    <form role="form">
+      <div class="form-group">
+        <label for="input" id="input_label">
+          input
+        </label>
+        <textarea id="input" class="form-control" rows="5"
+          ng-model="input"></textarea>
+        <span class="help-block">
+          <span class="badge badge-info">{{ inputRow }}</span>
+          <span class="t_row">行</span>,
+          <span class="badge badge-info">{{ inputCount }}</span>
+          <span class="t_byte">字节</span>
+        </span>
+      </div><!-- form-group -->
+      <div class="form-group" id="outdiv">
+        <label for="output" id="output_label">
+          output
+        </label>
+        <textarea id="output" class="form-control" rows="5"
+        ng-model="output"></textarea>
+        <span class="help-block">
+          <span class="badge badge-info">{{ outputRow }}</span>
+          <span class="t_row">行</span>,
+          <span class="badge badge-info">{{ outputCount }}</span>
+          <span class="t_byte">字节</span>
+        </span>
+      </div><!-- form-group -->
+      <div class="form-group">
+        <input type="checkbox" id="one"/>
+        <label class="checkbox-inline" id="one_label" for="one">
+          单输入框模式
+        </label>
+      </div><!-- control-group -->
+    </form>
     <footer>
       <div>
-        <a id="online" target="_blank" href="http://xuender.me/toolbox"></a>
+        <a id="online" target="_blank" href="http://xuender.me/toolbox">
+        copyright
+        </a>
       </div>
       <div>
-        <a id="store" target="_blank" href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl"></a>
+        <a id="store" target="_blank" href="https://chrome.google.com/webstore/detail/hbkboegfdkllhmokangamapokbnnhfbl">
+        Chrome商店
+        </a>
       </div>
     </footer>
-  </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/angular.min.js"></script>
-  <script src="js/ui-bootstrap-tpls.min.js"></script>
-  <script src="js/main.min.js"></script>
-</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
 </html>
