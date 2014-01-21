@@ -4,11 +4,29 @@ Copyright (C) 2014 ender xu <xuender@gmail.com>
 
 Distributed under terms of the MIT license.
 ###
+tracker = null
+(->
+  service = analytics.getService('ice_cream_app')
+  tracker = service.getTracker('UA-35761644-1')
+)()
 $ ->
   for es in [$('span'), $('button'), $('title'), $('label'), $('a')]
     for s in es
       if s.id
         s.textContent = chrome.i18n.getMessage(s.id)
+  $('#input').focus()
+  $(window).resize(->
+    doResize()
+  )
+
+doResize = ->
+  if $('body').scope().one
+    h = $(window).height() - (700 - 328)
+    $('#input').height(h)
+  else
+    h = $(window).height() - (700 - 224)
+    $('#input').height(h / 2)
+    $('#output').height(h / 2)
 
 angular.module('toolbox', [
   'ui.bootstrap'
@@ -28,14 +46,12 @@ ToolboxCtrl = ($scope)->
     if 'one' of items
       $scope.one = items['one']
       $scope.$apply()
+      doResize()
     else
       $scope.one = false
   )
   $scope.$watch('one', (n, o)->
-    if n
-      $scope.rows = 15
-    else
-      $scope.rows = 5
+    doResize()
     chrome.storage.sync.set({'one': n})
   )
   $scope.input = ''
@@ -55,6 +71,8 @@ ToolboxCtrl = ($scope)->
     {
       title: chrome.i18n.getMessage('g_unique')
       items: [
+        new Unique($scope, chrome.i18n.getMessage('unique'))
+        new Repeated($scope, chrome.i18n.getMessage('Repeated'))
       ]
     }
     {
@@ -68,11 +86,17 @@ ToolboxCtrl = ($scope)->
     {
       title: chrome.i18n.getMessage('g_hash')
       items: [
+        new Md5($scope, chrome.i18n.getMessage('md5'))
+        new Sha1($scope, chrome.i18n.getMessage('sha1'))
       ]
     }
     {
       title: chrome.i18n.getMessage('g_beautify')
       items: [
+        new JsBeautify($scope, chrome.i18n.getMessage('js'))
+        new CssBeautify($scope, chrome.i18n.getMessage('css'))
+        new HtmlBeautify($scope, chrome.i18n.getMessage('html'))
+        new JsonBeautify($scope, chrome.i18n.getMessage('json'))
       ]
     }
   ]
@@ -83,5 +107,6 @@ ToolboxCtrl = ($scope)->
   $scope.repeat = ->
     for i in $scope.history
       i.run()
+  tracker.sendAppView('main')
 
 ToolboxCtrl.$inject = ['$scope']

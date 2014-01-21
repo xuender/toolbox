@@ -44,16 +44,6 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      angularBootstrap:
-        files: [
-          cwd: 'bower_components/angular-bootstrap/'
-          src: [
-            'ui-bootstrap-tpls.min.js'
-          ]
-          dest: 'dist/js'
-          expand: true
-          filter: 'isFile'
-        ]
       jquery:
         files: [
           cwd: 'bower_components/jquery/'
@@ -65,11 +55,35 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      utils:
+      analytics:
         files: [
-          cwd: 'bower_components/js-utils/js'
+          cwd: 'bower_components/chrome-platform-analytics'
           src: [
-            'chrome.min.js'
+            'google-analytics-bundle.js'
+          ]
+          dest: 'dist/js'
+          expand: true
+          filter: 'isFile'
+        ]
+      crypto:
+        files: [
+          cwd: 'bower_components/crypto-js/build/components'
+          src: [
+            'core-min.js'
+            'md5-min.js'
+            'sha1-min.js'
+          ]
+          dest: 'dist/js'
+          expand: true
+          filter: 'isFile'
+        ]
+      beautify:
+        files: [
+          cwd: 'bower_components/js-beautify/js/lib'
+          src: [
+            'beautify-css.js'
+            'beautify-html.js'
+            'beautify.js'
           ]
           dest: 'dist/js'
           expand: true
@@ -122,6 +136,9 @@ module.exports = (grunt)->
             'src/js/command.coffee'
             'src/js/sort.coffee'
             'src/js/trim.coffee'
+            'src/js/unique.coffee'
+            'src/js/hash.coffee'
+            'src/js/beautify.coffee'
             'src/js/main.coffee'
           ]
       background:

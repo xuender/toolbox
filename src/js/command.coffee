@@ -20,8 +20,13 @@ class Command
     if this instanceof Command and this.constructor != Command
       Command.push(@name, this)
       @scope.history.push(new Command(@scope, @name))
+    tracker = tracker || false
+    if tracker
+      tracker.sendEvent('command', 'name', @name)
 
   command: ->
     Command.history[@name].command()
 
 class Divider extends Command
+  command: ->
+    console.error 'divider not run'

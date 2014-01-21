@@ -1,10 +1,11 @@
 {
     "name": "__MSG_name__",
-    "version": "1.0.35",
+    "version": "1.0.36",
     "description": "__MSG_description__",
     "manifest_version": 2,
     "default_locale": "en",
     "offline_enabled": true,
+    "short_name": "tb",
     "app": {
         "background": {
             "scripts": [
@@ -13,7 +14,8 @@
         }
     },
     "permissions": [
-      "storage"
+        "https://www.google-analytics.com/*",
+        "storage"
     ],
     "icons": {
         "16": "img/16.png",
