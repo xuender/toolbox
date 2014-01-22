@@ -23,15 +23,6 @@ module.exports = (grunt)->
       options:
         part: 'patch'
       files: [ 'package.json', 'bower.json', 'src/manifest.json' ]
-    #concat:
-    #  locales:
-    #    src: [
-    #      'src/server/js/en.js'
-    #      'src/server/js/ru.js'
-    #      'src/server/js/zh_CN.js'
-    #      'src/server/js/zh_TW.js'
-    #    ]
-    #    dest: 'dist/server/js/locales.min.js'
     copy:
       angular:
         files: [
@@ -175,7 +166,7 @@ module.exports = (grunt)->
           removeComments: true,
           collapseWhitespace: true
         files:
-          'dist/main.html': 'src/main.html'
+          'dist/index.html': 'src/index.html'
           'dist/about.html': 'src/about.html'
     cssmin:
       toolbox:
