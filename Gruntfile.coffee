@@ -150,6 +150,7 @@ module.exports = (grunt)->
             'src/js/unique.coffee'
             'src/js/hash.coffee'
             'src/js/beautify.coffee'
+            'src/js/about.coffee'
             'src/js/main.coffee'
           ]
       background:
@@ -175,6 +176,7 @@ module.exports = (grunt)->
           collapseWhitespace: true
         files:
           'dist/main.html': 'src/main.html'
+          'dist/about.html': 'src/about.html'
     cssmin:
       toolbox:
         expand: true

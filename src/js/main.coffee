@@ -10,14 +10,15 @@ tracker = null
   tracker = service.getTracker('UA-35761644-1')
 )()
 $ ->
-  for es in [$('span'), $('button'), $('title'), $('label'), $('a')]
-    for s in es
-      if s.id
-        s.textContent = chrome.i18n.getMessage(s.id)
   $('#input').focus()
   $(window).resize(->
     doResize()
   )
+i18n = ->
+  for es in [$('span'), $('button'), $('title'), $('label'), $('a')]
+    for s in es
+      if s.id
+        s.textContent = chrome.i18n.getMessage(s.id)
 
 doResize = ->
   if $('body').scope().one
@@ -31,7 +32,7 @@ doResize = ->
 angular.module('toolbox', [
   'ui.bootstrap'
 ])
-ToolboxCtrl = ($scope)->
+ToolboxCtrl = ($scope, $modal)->
   $scope.history = []
   $scope.$watch('input',(n, o)->
     $scope.inputRow = n.split('\n').length
@@ -106,12 +107,22 @@ ToolboxCtrl = ($scope)->
       $scope.input = h.input
       $scope.output = h.output
 
+  $scope.about = ->
+    d = $modal.open
+      backdrop: true
+      keyboard: true
+      backdropClick: true
+      templateUrl: 'about.html'
+      controller: 'AboutCtrl'
+
   $scope.clean = ->
     $scope.history = []
 
   $scope.repeat = ->
     for i in $scope.history
       i.run()
+
+  i18n()
   tracker.sendAppView('main')
 
-ToolboxCtrl.$inject = ['$scope']
+ToolboxCtrl.$inject = ['$scope', '$modal']

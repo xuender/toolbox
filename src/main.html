@@ -26,41 +26,53 @@
           </ul>
           <ul class="nav navbar-nav pull-right">
             <li>
-              <a  target="_blank"
-              href="https://chrome.google.com/webstore/detail/dckjbbhlbmojeohhjlobfllblcoannge/reviews">
-                <i class="glyphicon glyphicon-star"></i>
-                <span id="reviews">评论</span>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-exclamation-sign"></i>
+                <span id="help">帮助</span>
+                <b class="caret"></b>
               </a>
-            </li>
-            <li>
-              <a target="_blank"
-              href="https://chrome.google.com/webstore/support/dckjbbhlbmojeohhjlobfllblcoannge?#bug">
-                <i class="glyphicon glyphicon-plus-sign"></i>
-                <span id="bug">错误</span>
-              </a>
-            </li>
-            <li>
-              <a target="_blank"
-              href="https://chrome.google.com/webstore/support/dckjbbhlbmojeohhjlobfllblcoannge?#question">
-                <i class="glyphicon glyphicon-question-sign"></i>
-                <span id="question">问题</span>
-              </a>
-            </li>
-            <li>
-              <a target="_blank"
-              href="https://chrome.google.com/webstore/support/dckjbbhlbmojeohhjlobfllblcoannge?#feature">
-                <i class="glyphicon glyphicon-heart"></i>
-                <span id="feature">功能</span>
-              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a  target="_blank"
+                  href="https://chrome.google.com/webstore/detail/dckjbbhlbmojeohhjlobfllblcoannge/reviews">
+                    <i class="glyphicon glyphicon-star"></i>
+                    <span id="reviews">评论</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank"
+                  href="https://chrome.google.com/webstore/support/dckjbbhlbmojeohhjlobfllblcoannge?#bug">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                    <span id="bug">错误</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank"
+                  href="https://chrome.google.com/webstore/support/dckjbbhlbmojeohhjlobfllblcoannge?#question">
+                    <i class="glyphicon glyphicon-question-sign"></i>
+                    <span id="question">问题</span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank"
+                  href="https://chrome.google.com/webstore/support/dckjbbhlbmojeohhjlobfllblcoannge?#feature">
+                    <i class="glyphicon glyphicon-heart"></i>
+                    <span id="feature">功能</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a target="_blank" href="#" ng-click="about()">
+                    <i class="glyphicon glyphicon-exclamation-sign"></i>
+                    <span id="about">关于</span>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
       </div><!-- container -->
     </header>
-    <h3>
-      <img src="img/48.png" align="bottom"/>
-      <span id="name">Toolbox</span>
-    </h3>
     <ol class="breadcrumb">
       <li>
         <div class="btn-group">
@@ -104,7 +116,7 @@
           output
         </label>
         <textarea class="form-control" rows="5" id="output"
-        ng-model="output"></textarea>
+        ng-model="output" readonly="readonly"></textarea>
         <span class="help-block">
           <span class="badge badge-info">{{ outputRow }}</span>
           <span class="t_row">行</span>,
@@ -121,21 +133,6 @@
     </form>
     <footer>
       <div class="container">
-          <i class="glyphicon glyphicon-copyright-mark"></i>
-          <a id="a_xuender" href="http://xuender.me" target="_blank">
-            xuender.me</a> 2012-2014
-          <a target="_blank" title="Chrome Web Store"
-          href="https://chrome.google.com/webstore/detail/dckjbbhlbmojeohhjlobfllblcoannge">
-            <img src="img/chrome.png"/>
-          </a>
-          <a target="_blank" title="GitHub project"
-          href="https://github.com/xuender/toolbox">
-            <img src="img/github.png"/>
-          </a>
-          <a target="_blank" title="Mail to me"
-          href="mailto:xuender@gmail.com">
-            <img src="img/gmail.png"/>
-          </a>
       </div>
     </footer>
     <script src="js/jquery.min.js"></script>

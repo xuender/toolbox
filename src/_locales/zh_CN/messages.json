@@ -1,4 +1,13 @@
 {
+  "close": {
+    "message": "关闭"
+  },
+  "about": {
+    "message": "关于工具箱"
+  },
+  "help": {
+    "message": "帮助"
+  },
   "undo": {
     "message": "撤销"
   },

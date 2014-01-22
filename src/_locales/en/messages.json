@@ -1,4 +1,13 @@
 {
+  "close": {
+    "message": "Close"
+  },
+  "about": {
+    "message": "About Toolbox"
+  },
+  "help": {
+    "message": "Help"
+  },
   "undo": {
     "message": "Undo"
   },
