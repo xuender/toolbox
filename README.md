@@ -1,4 +1,4 @@
-toolbox
+Toolbox [![Build Status](https://travis-ci.org/xuender/toolbox.png?branch=master)](https://travis-ci.org/xuender/toolbox)
 =======
 
 chrome toolbox
@@ -16,12 +16,6 @@ change
 * 0.1.20 remove blank lines, beautify: js, css, html, json
 * 0.1.13 md5, sha1
 * 0.1.10 sort, unique, trim
-
-python
-------
-
-* slimit (http://slimit.org/)
-* slimmer
 
 javascript
 ----------
