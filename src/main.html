@@ -65,11 +65,15 @@
       <li>
         <div class="btn-group">
           <button class="btn btn-success btn-xs" id="repeat"
-          ng-click="repeat()">
+          ng-click="repeat()" ng-disabled="history.length == 0">
             repeat
           </button>
-          <button class="btn btn-warning btn-xs" id="clean"
-          ng-click="clean()">
+          <button class="btn btn-warning btn-xs" id="undo"
+          ng-click="undo()" ng-disabled="history.length == 0">
+            undo
+          </button>
+          <button class="btn btn-danger btn-xs" id="clean"
+          ng-click="clean()" ng-disabled="history.length == 0">
             clean
           </button>
         </div><!-- btn-group -->

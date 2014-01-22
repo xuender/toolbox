@@ -1,4 +1,7 @@
 {
+  "undo": {
+    "message": "Undo"
+  },
   "feature": {
     "message": "Feature"
   },

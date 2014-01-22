@@ -1,4 +1,7 @@
 {
+  "undo": {
+    "message": "撤销"
+  },
   "feature": {
     "message": "功能建议"
   },

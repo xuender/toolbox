@@ -100,6 +100,11 @@ ToolboxCtrl = ($scope)->
       ]
     }
   ]
+  $scope.undo = ->
+    h = $scope.history.pop()
+    if h
+      $scope.input = h.input
+      $scope.output = h.output
 
   $scope.clean = ->
     $scope.history = []

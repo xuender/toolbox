@@ -10,16 +10,23 @@ class Command
   @push = (name, command)->
     if name not of Command.history
       Command.history[name] = command
+  input: ''
+  output: ''
   constructor: (@scope, @name)->
 
   run: ->
+    input = @scope.input
+    output = @scope.output
     this.command()
     if @scope.one
       @scope.input = @scope.output
     console.debug " #{@name} run."
     if this instanceof Command and this.constructor != Command
       Command.push(@name, this)
-      @scope.history.push(new Command(@scope, @name))
+      c = new Command(@scope, @name)
+      c.input = input
+      c.output = output
+      @scope.history.push(c)
     tracker = tracker || false
     if tracker
       tracker.sendEvent('command', 'name', @name)
