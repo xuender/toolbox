@@ -1,4 +1,7 @@
 {
+  "settings": {
+    "message": "Settings"
+  },
   "close": {
     "message": "Close"
   },

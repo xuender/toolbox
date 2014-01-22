@@ -27,6 +27,25 @@
           <ul class="nav navbar-nav pull-right">
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-wrench"></i>
+                <span id="settings">设置</span>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#" ng-click="one = !one">
+                    <div class="form-group">
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="one" ng-model="one" value="true"/>
+                        <span id="one_label">单输入框模式</span>
+                      </label>
+                    </div><!-- control-group -->
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-exclamation-sign"></i>
                 <span id="help">帮助</span>
                 <b class="caret"></b>
@@ -73,6 +92,34 @@
         </nav>
       </div><!-- container -->
     </header>
+    <form role="form">
+      <div class="form-group">
+        <label for="input" id="input_label" ng-hide="one">
+          input
+        </label>
+        <textarea class="form-control" rows="{{ rows }}"
+          ng-model="input" id="input"></textarea>
+        <span class="help-block">
+          <span class="badge badge-info">{{ inputRow }}</span>
+          <span class="t_row">行</span>,
+          <span class="badge badge-info">{{ inputCount }}</span>
+          <span class="t_byte">字节</span>
+        </span>
+      </div><!-- form-group -->
+      <div class="form-group" ng-hide="one">
+        <label for="output" id="output_label">
+          output
+        </label>
+        <textarea class="form-control" rows="5" id="output"
+        ng-model="output" readonly="readonly"></textarea>
+        <span class="help-block">
+          <span class="badge">{{ outputRow }}</span>
+          <span class="t_row">行</span>,
+          <span class="badge">{{ outputCount }}</span>
+          <span class="t_byte">字节</span>
+        </span>
+      </div><!-- form-group -->
+    </form>
     <ol class="breadcrumb">
       <li>
         <div class="btn-group">
@@ -97,44 +144,6 @@
         </a>
       </li>
     </ol>
-    <form role="form">
-      <div class="form-group">
-        <label for="input" id="input_label" ng-hide="one">
-          input
-        </label>
-        <textarea class="form-control" rows="{{ rows }}"
-          ng-model="input" id="input"></textarea>
-        <span class="help-block">
-          <span class="badge badge-info">{{ inputRow }}</span>
-          <span class="t_row">行</span>,
-          <span class="badge badge-info">{{ inputCount }}</span>
-          <span class="t_byte">字节</span>
-        </span>
-      </div><!-- form-group -->
-      <div class="form-group" ng-hide="one">
-        <label for="output" id="output_label">
-          output
-        </label>
-        <textarea class="form-control" rows="5" id="output"
-        ng-model="output" readonly="readonly"></textarea>
-        <span class="help-block">
-          <span class="badge badge-info">{{ outputRow }}</span>
-          <span class="t_row">行</span>,
-          <span class="badge badge-info">{{ outputCount }}</span>
-          <span class="t_byte">字节</span>
-        </span>
-      </div><!-- form-group -->
-      <div class="form-group">
-        <label class="checkbox-inline">
-          <input type="checkbox" id="one" ng-model="one" value="true"/>
-          <span id="one_label">单输入框模式</span>
-        </label>
-      </div><!-- control-group -->
-    </form>
-    <footer>
-      <div class="container">
-      </div>
-    </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/ui-bootstrap-tpls.min.js"></script>

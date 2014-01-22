@@ -22,10 +22,10 @@ i18n = ->
 
 doResize = ->
   if $('body').scope().one
-    h = $(window).height() - (700 - 328)
+    h = $(window).height() - (700 - 544)
     $('#input').height(h)
   else
-    h = $(window).height() - (700 - 224)
+    h = $(window).height() - (700 - 440)
     $('#input').height(h / 2)
     $('#output').height(h / 2)
 
