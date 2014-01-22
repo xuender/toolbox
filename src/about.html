@@ -1,25 +1,31 @@
 <div class="modal-header">
+  {{ i18n('about') }}
+</div><!-- model-header -->
+<div class="modal-body">
   <h3>
     <img src="img/48.png" align="bottom"/>
     {{ i18n('name') }}
   </h3>
-</div><!-- model-header -->
-<div class="modal-body">
-          <i class="glyphicon glyphicon-copyright-mark"></i>
-          <a id="a_xuender" href="http://xuender.me" target="_blank">
-            xuender.me</a> 2012-2014
-          <a target="_blank" title="Chrome Web Store"
-          href="https://chrome.google.com/webstore/detail/dckjbbhlbmojeohhjlobfllblcoannge">
-            <img src="img/chrome.png"/>
-          </a>
-          <a target="_blank" title="GitHub project"
-          href="https://github.com/xuender/toolbox">
-            <img src="img/github.png"/>
-          </a>
-          <a target="_blank" title="Mail to me"
-          href="mailto:xuender@gmail.com">
-            <img src="img/gmail.png"/>
-          </a>
+  <p>
+    {{ i18n('description') }}
+  </p>
+  <p>
+    <a target="_blank" title="Chrome Web Store"
+    href="https://chrome.google.com/webstore/detail/dckjbbhlbmojeohhjlobfllblcoannge">
+      <img src="img/chrome.png"/>
+    </a>
+    <a target="_blank" title="GitHub project"
+    href="https://github.com/xuender/toolbox">
+      <img src="img/github.png"/>
+    </a>
+    <a target="_blank" title="Mail to me"
+    href="mailto:xuender@gmail.com">
+      <img src="img/gmail.png"/>
+    </a>
+  </p>
+  <i class="glyphicon glyphicon-copyright-mark"></i>
+  <a id="a_xuender" href="http://xuender.me" target="_blank">
+    xuender.me</a> 2012-2014
 </div><!-- modal-body -->
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="close()">{{ i18n('close') }}</button>
