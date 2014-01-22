@@ -11,7 +11,7 @@ beantify code.
 
 change
 ------
-
+* 1.0.36 modified package app
 * 0.1.28 number sort
 * 0.1.20 remove blank lines, beautify: js, css, html, json
 * 0.1.13 md5, sha1
