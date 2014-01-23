@@ -124,5 +124,6 @@ ToolboxCtrl = ($scope, $modal)->
   $scope.i18n = (key)->
     chrome.i18n.getMessage(key)
   TRACKER.sendAppView('main')
+  $scope.show = true
 
 ToolboxCtrl.$inject = ['$scope', '$modal']
