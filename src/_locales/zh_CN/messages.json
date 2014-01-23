@@ -39,13 +39,13 @@
     "message": "文本顺序调整"
   },
   "sort": {
-    "message": "顺序"
+    "message": "文本顺序"
   },
   "sort_title": {
     "message": "文本顺序排列"
   },
   "desc": {
-    "message": "倒序"
+    "message": "文本倒序"
   },
   "desc_title": {
     "message": "文本倒序排列"

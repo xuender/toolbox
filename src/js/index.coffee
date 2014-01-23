@@ -1,31 +1,27 @@
 ###
-main.coffee
+index.coffee
 Copyright (C) 2014 ender xu <xuender@gmail.com>
 
 Distributed under terms of the MIT license.
 ###
-tracker = null
-(->
-  service = analytics.getService('ice_cream_app')
-  tracker = service.getTracker('UA-35761644-1')
-)()
 $ ->
+  $('title').text(chrome.i18n.getMessage('title'))
   $('#input').focus()
   $(window).resize(->
     doResize()
   )
-i18n = ->
-  for es in [$('span'), $('button'), $('title'), $('label'), $('a')]
-    for s in es
-      if s.id
-        s.textContent = chrome.i18n.getMessage(s.id)
+  $('ol').resize(->
+    doResize()
+  )
 
 doResize = ->
+  o = $('header').height() + $('ol').height() + $('.help-block').height() + 65
   if $('body').scope().one
-    h = $(window).height() - (700 - 544)
+    h = $(window).height() - o
     $('#input').height(h)
   else
-    h = $(window).height() - (700 - 440)
+    o = o + $('.help-block').height() + 84
+    h = $(window).height() - o
     $('#input').height(h / 2)
     $('#output').height(h / 2)
 
@@ -47,7 +43,6 @@ ToolboxCtrl = ($scope, $modal)->
     if 'one' of items
       $scope.one = items['one']
       $scope.$apply()
-      doResize()
     else
       $scope.one = false
   )
@@ -106,6 +101,7 @@ ToolboxCtrl = ($scope, $modal)->
     if h
       $scope.input = h.input
       $scope.output = h.output
+    TRACKER.sendEvent('command', 'sys', 'undo')
 
   $scope.about = ->
     d = $modal.open
@@ -114,15 +110,19 @@ ToolboxCtrl = ($scope, $modal)->
       backdropClick: true
       templateUrl: 'about.html'
       controller: 'AboutCtrl'
+    TRACKER.sendEvent('command', 'sys', 'about')
 
   $scope.clean = ->
     $scope.history = []
+    TRACKER.sendEvent('command', 'sys', 'clean')
 
   $scope.repeat = ->
     for i in $scope.history
       i.run()
+    TRACKER.sendEvent('command', 'sys', 'repeat')
 
-  i18n()
-  tracker.sendAppView('main')
+  $scope.i18n = (key)->
+    chrome.i18n.getMessage(key)
+  TRACKER.sendAppView('main')
 
 ToolboxCtrl.$inject = ['$scope', '$modal']

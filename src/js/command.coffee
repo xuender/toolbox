@@ -27,9 +27,7 @@ class Command
       c.input = input
       c.output = output
       @scope.history.push(c)
-    tracker = tracker || false
-    if tracker
-      tracker.sendEvent('command', 'name', @name)
+    TRACKER.sendEvent('command', 'name', @name)
 
   command: ->
     Command.history[@name].command()

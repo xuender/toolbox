@@ -39,19 +39,19 @@
     "message": "Text in order to adjust"
   },
   "sort": {
-    "message": "Asc"
+    "message": "Sort String"
   },
   "sort_title": {
     "message": "Text order"
   },
   "desc": {
-    "message": "Desc"
+    "message": "Desc String"
   },
   "desc_title": {
     "message": "Text in reverse order"
   },
   "sortNumber": {
-    "message": "Asc Number"
+    "message": "Sort Number"
   },
   "sortNumber_title": {
     "message": "Text order by number"

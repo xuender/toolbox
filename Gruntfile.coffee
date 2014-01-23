@@ -135,6 +135,7 @@ module.exports = (grunt)->
       main:
         files:
           'dist/js/main.min.js': [
+            'src/js/toolbox.coffee'
             'src/js/command.coffee'
             'src/js/sort.coffee'
             'src/js/trim.coffee'
@@ -142,7 +143,7 @@ module.exports = (grunt)->
             'src/js/hash.coffee'
             'src/js/beautify.coffee'
             'src/js/about.coffee'
-            'src/js/main.coffee'
+            'src/js/index.coffee'
           ]
       background:
         files:

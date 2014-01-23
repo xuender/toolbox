@@ -9,4 +9,5 @@ AboutCtrl = ($scope, $log, $modalInstance)->
     $modalInstance.close('close')
   $scope.i18n = (key)->
     chrome.i18n.getMessage(key)
+  TRACKER.sendAppView('about')
 AboutCtrl.$inject = ['$scope', '$log', '$modalInstance']
