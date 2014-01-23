@@ -15,12 +15,12 @@ $ ->
   )
 
 doResize = ->
-  o = $('header').height() + $('ol').height() + $('.help-block').height() + 65
+  o = 55 + $('ol').height() + $('.help-block').height() + 50
   if $('body').scope().one
     h = $(window).height() - o
     $('#input').height(h)
   else
-    o = o + $('.help-block').height() + 84
+    o = o + $('.help-block').height() + 70
     h = $(window).height() - o
     $('#input').height(h / 2)
     $('#output').height(h / 2)
@@ -44,7 +44,7 @@ ToolboxCtrl = ($scope, $modal)->
       $scope.one = items['one']
       $scope.$apply()
     else
-      $scope.one = false
+      $scope.one = true
   )
   $scope.$watch('one', (n, o)->
     doResize()

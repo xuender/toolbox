@@ -230,8 +230,8 @@ module.exports = (grunt)->
     'compress'
   ])
   grunt.registerTask('deploy', [
-    'dist'
     'bump'
+    'dist'
   ])
   grunt.registerTask('travis', 'travis test', ['karma:travis'])
   grunt.registerTask('default', ['dist'])
