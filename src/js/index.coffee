@@ -19,6 +19,7 @@ doResize = ->
 
 angular.module('toolbox', [
   'ui.bootstrap'
+  'hotkey'
 ])
 ToolboxCtrl = ($scope, $modal)->
   $scope.history = []

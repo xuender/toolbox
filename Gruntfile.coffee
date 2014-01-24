@@ -45,7 +45,6 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-
       jquery:
         files: [
           cwd: 'bower_components/jquery/'
@@ -62,6 +61,16 @@ module.exports = (grunt)->
           cwd: 'bower_components/chrome-platform-analytics'
           src: [
             'google-analytics-bundle.js'
+          ]
+          dest: 'dist/js'
+          expand: true
+          filter: 'isFile'
+        ]
+      hotkey:
+        files: [
+          cwd: 'bower_components/ng-hotkey/'
+          src: [
+            'hotkey.min.js'
           ]
           dest: 'dist/js'
           expand: true
