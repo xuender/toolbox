@@ -106,7 +106,7 @@ module.exports = (grunt)->
           src: [
             'css/bootstrap.min.css'
             'js/bootstrap.min.js'
-            'fonts/*'
+            'fonts/*.woff'
           ]
           dest: 'dist'
           expand: true

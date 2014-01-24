@@ -61,7 +61,7 @@ class CssBeautify extends Command
 
 class HtmlBeautify extends Command
   command: ->
-    @scope.input = sytle_html(@scope.input)
+    @scope.input = html_beautify(@scope.input)
 
 class JsonBeautify extends Command
   command: ->
