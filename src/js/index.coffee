@@ -15,15 +15,7 @@ $ ->
   )
 
 doResize = ->
-  o = 55 + $('ol').height() + $('.help-block').height() + 50
-  if $('body').scope().one
-    h = $(window).height() - o
-    $('#input').height(h)
-  else
-    o = o + $('.help-block').height() + 70
-    h = $(window).height() - o
-    $('#input').height(h / 2)
-    $('#output').height(h / 2)
+  $('#input').height($(document).height() - 140)
 
 angular.module('toolbox', [
   'ui.bootstrap'
@@ -34,24 +26,7 @@ ToolboxCtrl = ($scope, $modal)->
     $scope.inputRow = n.split('\n').length
     $scope.inputCount = n.length
   )
-  $scope.$watch('output',(n, o)->
-    $scope.outputRow = n.split('\n').length
-    $scope.outputCount = n.length
-  )
-  $scope.rows = 5
-  chrome.storage.sync.get((items)->
-    if 'one' of items
-      $scope.one = items['one']
-      $scope.$apply()
-    else
-      $scope.one = true
-  )
-  $scope.$watch('one', (n, o)->
-    doResize()
-    chrome.storage.sync.set({'one': n})
-  )
   $scope.input = ''
-  $scope.output = ''
   $scope.commands = [
     {
       title: chrome.i18n.getMessage('g_sort')
@@ -100,7 +75,6 @@ ToolboxCtrl = ($scope, $modal)->
     h = $scope.history.pop()
     if h
       $scope.input = h.input
-      $scope.output = h.output
     TRACKER.sendEvent('command', 'sys', 'undo')
 
   $scope.about = ->

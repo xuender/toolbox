@@ -25,6 +25,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav pull-right">
+            <!--
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-wrench"></i>
@@ -40,11 +41,12 @@
                         ng-model="one"/>
                         {{ i18n('one_label') }}
                       </label>
-                    </div><!-- control-group -->
+                    </div>
                   </a>
                 </li>
               </ul>
             </li>
+            -->
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-exclamation-sign"></i>
@@ -93,10 +95,11 @@
         </nav>
       </div><!-- container -->
     </header>
-    <ol class="breadcrumb">
-      <li>
-        <div class="btn-group">
-          <button class="btn btn-warning"
+    <div class="main">
+      <ol class="breadcrumb">
+        <li>
+          <div class="btn-group">
+            <button class="btn btn-warning"
           ng-click="undo()" ng-disabled="history.length == 0">
             {{ i18n('undo') }}
           </button>
@@ -117,34 +120,15 @@
         </a>
       </li>
     </ol>
-    <form role="form">
-      <div class="form-group">
-        <label for="input" id="input_label" ng-hide="one">
-          input
-        </label>
-        <textarea class="form-control" rows="{{ rows }}"
-          ng-model="input" id="input"></textarea>
-        <span class="help-block">
-          {{ i18n('t_row') }}:
-          <span class="badge badge-info">{{ inputRow }}</span>
-          {{ i18n('t_byte') }}:
-          <span class="badge badge-info">{{ inputCount }}</span>
-        </span>
-      </div><!-- form-group -->
-      <div class="form-group" ng-hide="one">
-        <label for="output" id="output_label">
-          output
-        </label>
-        <textarea class="form-control" rows="5" id="output"
-        ng-model="output" readonly="readonly"></textarea>
-        <span class="help-block">
-          {{ i18n('t_row') }}:
-          <span class="badge">{{ outputRow }}</span>
-          {{ i18n('t_byte') }}:
-          <span class="badge">{{ outputCount }}</span>
-        </span>
-      </div><!-- form-group -->
-    </form>
+    <textarea class="form-control" id="input"
+      ng-model="input"></textarea>
+    </div><!-- main -->
+    <div class="help-block footer">
+      {{ i18n('t_row') }}:
+      <span class="badge badge-info">{{ inputRow }}</span>
+      {{ i18n('t_byte') }}:
+      <span class="badge badge-info">{{ inputCount }}</span>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/ui-bootstrap-tpls.min.js"></script>

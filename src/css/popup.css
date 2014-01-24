@@ -8,14 +8,28 @@ ng\:form {
   display: block;
 }
 
+html, body{
+  height: 100%;
+  margin: 0px;
+}
 body {
-  padding: 55px 10px 10px 10px;
-  min-width: 770px;
-  min-height: 700px;
+  padding: 55px 5px 5px 5px;
 }
 .breadcrumb {
   background-color: #E9E9E9;
+  margin-bottom: 10px;
 }
-textarea {
+.main {
+  min-height: 100%;
+  position: relative;
+}
+textarea.form-control {
   resize: none;
+  height: 460px;
+}
+.footer {
+  position: relative;
+  z-index: 10;
+  margin-top: -20px;
+  clear: both;
 }
