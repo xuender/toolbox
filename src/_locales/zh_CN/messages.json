@@ -1,4 +1,7 @@
 {
+  "coffee": {
+    "message": "使用比特币给作者买杯饮料"
+  },
   "command": {
     "message": "命令"
   },

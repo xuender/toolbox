@@ -2,6 +2,10 @@
   {{ i18n('about') }}
 </div><!-- model-header -->
 <div class="modal-body">
+  <div class="pull-right">
+    <img src="img/coffee.png"/>
+    <div class="text-info text-center">{{ i18n('coffee') }}</div>
+  </div>
   <h3>
     <img src="img/48.png" align="bottom"/>
     {{ i18n('name') }}
@@ -23,9 +27,11 @@
       <img src="img/gmail.png"/>
     </a>
   </p>
-  <i class="glyphicon glyphicon-copyright-mark"></i>
+  <p>
+    <i class="glyphicon glyphicon-copyright-mark"></i>2012-2014
+  </p>
   <a id="a_xuender" href="http://xuender.me" target="_blank">
-    xuender.me</a> 2012-2014
+    xuender.me</a> 
 </div><!-- modal-body -->
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="close()">{{ i18n('close') }}</button>
