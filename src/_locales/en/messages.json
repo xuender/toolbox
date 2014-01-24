@@ -1,4 +1,7 @@
 {
+  "command": {
+    "message": "Commands"
+  },
   "settings": {
     "message": "Settings"
   },
@@ -123,7 +126,7 @@
     "message": "byte"
   },
   "one_label": {
-    "message": "Single text area mode"
+    "message": "Toolbar"
   },
   "swap": {
     "message": "Swap IO"

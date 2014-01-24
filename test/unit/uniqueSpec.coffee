@@ -12,7 +12,7 @@ describe 'unique', ->
       input: 'i\ni\ns'
     s = new Unique(scope, 'unique')
     s.run()
-    expect(scope.output).toEqual('i\ns')
+    expect(scope.input).toEqual('i\ns')
 
   it 'repeated', ->
     scope =
@@ -20,4 +20,4 @@ describe 'unique', ->
       input: 'i\ni\ns'
     s = new Repeated(scope, 'repeated')
     s.run()
-    expect(scope.output).toEqual('i')
+    expect(scope.input).toEqual('i')

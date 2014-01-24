@@ -7,11 +7,11 @@ Distributed under terms of the MIT license.
 
 class Trim extends Command
   command: ->
-    @scope.output = $.trim(@scope.input)
+    @scope.input = $.trim(@scope.input)
 
 class TrimRow extends Command
   command: ->
-    @scope.output = ($.trim(i) for i in @scope.input.split('\n')).join('\n')
+    @scope.input = ($.trim(i) for i in @scope.input.split('\n')).join('\n')
 
 class Blank extends Command
   command: ->
@@ -20,4 +20,4 @@ class Blank extends Command
       s = $.trim(i)
       if s.length > 0
         t.push(i)
-    @scope.output = t.join('\n')
+    @scope.input = t.join('\n')

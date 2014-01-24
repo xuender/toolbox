@@ -11,7 +11,7 @@ describe 'command', ->
       input: 'i '
     s = new Trim(scope, 'Trim')
     s.run()
-    expect(scope.output).toEqual('i')
+    expect(scope.input).toEqual('i')
 
   it 'trim row', ->
     scope =
@@ -19,4 +19,4 @@ describe 'command', ->
       input: 'i \n b'
     s = new TrimRow(scope, 'TrimRow')
     s.run()
-    expect(scope.output).toEqual('i\nb')
+    expect(scope.input).toEqual('i\nb')

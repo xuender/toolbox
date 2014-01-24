@@ -18,7 +18,7 @@ uniqueArray = (array)->
 
 class Unique extends Command
   command: ->
-    @scope.output = uniqueArray(@scope.input.split('\n')).join('\n')
+    @scope.input = uniqueArray(@scope.input.split('\n')).join('\n')
 
 class Repeated extends Command
   command: ->
@@ -31,4 +31,4 @@ class Repeated extends Command
           c++
       if c > 1
         ret.push(i)
-    @scope.output = uniqueArray(ret).join('\n')
+    @scope.input = uniqueArray(ret).join('\n')
