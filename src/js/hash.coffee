@@ -6,8 +6,8 @@ Distributed under terms of the MIT license.
 ###
 class Md5 extends Command
   command: ->
-    @scope.output = CryptoJS.MD5(@scope.input).toString()
+    @scope.input = CryptoJS.MD5(@scope.input).toString()
 
 class Sha1 extends Command
   command: ->
-    @scope.output = CryptoJS.SHA1(@scope.input).toString()
+    @scope.input = CryptoJS.SHA1(@scope.input).toString()

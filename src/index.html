@@ -25,7 +25,6 @@
             </li>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <!--
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-wrench"></i>
@@ -33,6 +32,28 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <li ng-class="{disabled:history.length == 0}">
+                  <a  target="_blank" href="#"
+                  hotkey="Ctrl+U" ng-click="undo()">
+                    {{ i18n('undo') }}
+                    <span class="pull-right">Ctrl+U</span>
+                  </a>
+                </li>
+                <li ng-class="{disabled:history.length == 0}">
+                  <a  target="_blank" href="#"
+                  hotkey="Ctrl+R" ng-click="repeat()">
+                    {{ i18n('repeat') }}
+                    <span class="pull-right">Ctrl+R</span>
+                  </a>
+                </li>
+                <li ng-class="{disabled:history.length == 0}">
+                  <a  target="_blank" href="#"
+                  hotkey="Ctrl+Y" ng-click="clean()">
+                    {{ i18n('clean') }}
+                    <span class="pull-right">Ctrl+Y</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
                 <li>
                   <a href="#" ng-click="one = !one">
                     <div class="form-group">
@@ -46,7 +67,6 @@
                 </li>
               </ul>
             </li>
-            -->
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-exclamation-sign"></i>
@@ -84,9 +104,10 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                  <a target="_blank" href="#" hotkey="alt+a" ng-click="about()">
+                  <a target="_blank" href="#" hotkey="F1" ng-click="about()">
                     <i class="glyphicon glyphicon-exclamation-sign"></i>
                     {{ i18n('about') }}
+                    <span class="pull-right">F1</span>
                   </a>
                 </li>
               </ul>
@@ -96,7 +117,7 @@
       </div><!-- container -->
     </header>
     <div class="main">
-      <ol class="breadcrumb">
+      <ol class="breadcrumb" ng-show="one">
         <li>
           <div class="btn-group">
             <button class="btn btn-warning"

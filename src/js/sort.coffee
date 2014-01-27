@@ -14,21 +14,21 @@ compareNumber = (a, b)->
 
 class Sort extends Command
   command: ->
-    @scope.output = @scope.input.split('\n').sort().join('\n')
+    @scope.input = @scope.input.split('\n').sort().join('\n')
 
 class SortNumber extends Command
   command: ->
-    @scope.output = @scope.input.split('\n').sort(compareNumber).join('\n')
+    @scope.input = @scope.input.split('\n').sort(compareNumber).join('\n')
 
 class Desc extends Command
   command: ->
-    @scope.output = @scope.input.split('\n').sort().reverse().join('\n')
+    @scope.input = @scope.input.split('\n').sort().reverse().join('\n')
 
 class DescNumber extends Command
   command: ->
-    @scope.output = @scope.input.split('\n').sort(compareNumber)
+    @scope.input = @scope.input.split('\n').sort(compareNumber)
       .reverse().join('\n')
 
 class Reverse extends Command
   command: ->
-    @scope.output = @scope.input.split('\n').reverse().join('\n')
+    @scope.input = @scope.input.split('\n').reverse().join('\n')

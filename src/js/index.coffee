@@ -14,8 +14,12 @@ $ ->
     doResize()
   )
 
-doResize = ->
-  $('#input').height($(document).height() - 140)
+
+doResize = (one = $('ol').is(":visible"))->
+  if one
+    $('#input').height($(document).height() - 140)
+  else
+    $('#input').height($(document).height() - 80)
 
 angular.module('toolbox', [
   'ui.bootstrap'
@@ -26,6 +30,17 @@ ToolboxCtrl = ($scope, $modal)->
   $scope.$watch('input',(n, o)->
     $scope.inputRow = n.split('\n').length
     $scope.inputCount = n.length
+  )
+  $scope.one = false
+  chrome.storage.sync.get((items)->
+    if 'one' of items
+      $scope.one = items['one']
+      $scope.$apply()
+      doResize($scope.one)
+  )
+  $scope.$watch('one', (n, o)->
+    chrome.storage.sync.set({'one': n})
+    doResize(n)
   )
   $scope.input = ''
   $scope.commands = [

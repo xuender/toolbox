@@ -11,7 +11,7 @@ describe 'command', ->
       input: 'aa\ncc\nbb'
     s = new Sort(scope, 'Sort')
     s.run()
-    expect(scope.output).toEqual('aa\nbb\ncc')
+    expect(scope.input).toEqual('aa\nbb\ncc')
 
   it 'sortNumber', ->
     scope =
@@ -19,7 +19,7 @@ describe 'command', ->
       input: 'aa\n22\n110'
     s = new SortNumber(scope, 'SortNumber')
     s.run()
-    expect(scope.output).toEqual('22\n110\naa')
+    expect(scope.input).toEqual('22\n110\naa')
 
   it 'desc', ->
     scope =
@@ -27,7 +27,7 @@ describe 'command', ->
       input: 'aa\ncc\nbb'
     s = new Desc(scope, 'Desc')
     s.run()
-    expect(scope.output).toEqual('cc\nbb\naa')
+    expect(scope.input).toEqual('cc\nbb\naa')
 
   it 'descNumber', ->
     scope =
@@ -35,7 +35,7 @@ describe 'command', ->
       input: 'aa\n210\n31'
     s = new DescNumber(scope, 'Desc')
     s.run()
-    expect(scope.output).toEqual('aa\n210\n31')
+    expect(scope.input).toEqual('aa\n210\n31')
 
   it 'reverse', ->
     scope =
@@ -43,4 +43,4 @@ describe 'command', ->
       input: '33\ncc\n11'
     s = new Reverse(scope, 'reverse')
     s.run()
-    expect(scope.output).toEqual('11\ncc\n33')
+    expect(scope.input).toEqual('11\ncc\n33')

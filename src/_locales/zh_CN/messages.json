@@ -1,4 +1,10 @@
 {
+  "coffee": {
+    "message": "使用比特币给作者买杯饮料"
+  },
+  "command": {
+    "message": "命令"
+  },
   "settings": {
     "message": "设置"
   },
@@ -123,7 +129,7 @@
     "message": "字节"
   },
   "one_label": {
-    "message": "单输入框模式"
+    "message": "工具栏"
   },
   "swap": {
     "message": "输入输出交换"

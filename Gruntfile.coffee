@@ -106,7 +106,7 @@ module.exports = (grunt)->
           src: [
             'css/bootstrap.min.css'
             'js/bootstrap.min.js'
-            'fonts/*'
+            'fonts/*.woff'
           ]
           dest: 'dist'
           expand: true
@@ -150,6 +150,7 @@ module.exports = (grunt)->
             'src/js/trim.coffee'
             'src/js/unique.coffee'
             'src/js/hash.coffee'
+            'src/js/sql.coffee'
             'src/js/beautify.coffee'
             'src/js/about.coffee'
             'src/js/index.coffee'

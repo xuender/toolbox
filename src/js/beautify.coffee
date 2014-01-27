@@ -53,20 +53,20 @@ formatJson = (json)->
 
 class JsBeautify extends Command
   command: ->
-    @scope.output = js_beautify(@scope.input)
+    @scope.input = js_beautify(@scope.input)
 
 class CssBeautify extends Command
   command: ->
-    @scope.output = css_beautify(@scope.input)
+    @scope.input = css_beautify(@scope.input)
 
 class HtmlBeautify extends Command
   command: ->
-    @scope.output = sytle_html(@scope.input)
+    @scope.input = html_beautify(@scope.input)
 
 class JsonBeautify extends Command
   command: ->
-    @scope.output = formatJson(@scope.input)
+    @scope.input = formatJson(@scope.input)
 
 class SqlBeautify extends Command
   command: ->
-    @scope.output = formatSql(@scope.input)
+    @scope.input = formatSql(@scope.input)

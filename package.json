@@ -1,6 +1,6 @@
 {
     "name": "toolbox",
-    "version": "1.0.39",
+    "version": "1.0.42",
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-clean": "~0.5.0",
