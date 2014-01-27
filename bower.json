@@ -1,20 +1,20 @@
 {
-  "name": "toolbox",
-  "version": "1.0.42",
-  "ignore": [
-    "*",
-    "**/*"
-  ],
-  "dependencies": {
-    "jquery": "2.0.3",
-    "bootstrap": "~3.0.3",
-    "ng-hotkey": "~1.0.2",
-    "js-utils": "~1.0.16",
-    "js-beautify": "~1.4.2",
-    "crypto-js": "~3.1.2",
-    "chrome-platform-analytics": "*",
-    "angular": "1.2.9",
-    "angular-mocks": "1.2.9",
-    "angular-bootstrap": "0.10.0"
-  }
+    "name": "toolbox",
+    "version": "1.0.43",
+    "ignore": [
+        "*",
+        "**/*"
+    ],
+    "dependencies": {
+        "jquery": "2.0.3",
+        "bootstrap": "~3.0.3",
+        "ng-hotkey": "~1.0.2",
+        "js-utils": "~1.0.16",
+        "js-beautify": "~1.4.2",
+        "crypto-js": "~3.1.2",
+        "chrome-platform-analytics": "*",
+        "angular": "1.2.9",
+        "angular-mocks": "1.2.9",
+        "angular-bootstrap": "0.10.0"
+    }
 }
