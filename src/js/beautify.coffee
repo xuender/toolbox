@@ -66,3 +66,7 @@ class HtmlBeautify extends Command
 class JsonBeautify extends Command
   command: ->
     @scope.output = formatJson(@scope.input)
+
+class SqlBeautify extends Command
+  command: ->
+    @scope.output = formatSql(@scope.input)

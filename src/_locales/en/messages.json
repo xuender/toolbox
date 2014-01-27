@@ -182,20 +182,11 @@
   "html": {
     "message": "HTML"
   },
+  "sql": {
+    "message": "SQL"
+  },
   "json": {
     "message": "JSON"
-  },
-  "json_title": {
-    "message": "JSON code for beautify"
-  },
-  "js_title": {
-    "message": "JavaScript code for beautify"
-  },
-  "css_title": {
-    "message": "Stylesheet code for beautify"
-  },
-  "html_title": {
-    "message": "HTML code for beautify"
   },
   "blank": {
     "message": "Blank"

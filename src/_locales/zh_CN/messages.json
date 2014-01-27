@@ -182,20 +182,11 @@
   "html": {
     "message": "HTML"
   },
+  "sql": {
+    "message": "SQL"
+  },
   "json": {
     "message": "JSON"
-  },
-  "json_title": {
-    "message": "JSON代码格式化"
-  },
-  "js_title": {
-    "message": "JavaScript代码格式化"
-  },
-  "css_title": {
-    "message": "Stylesheet代码格式化"
-  },
-  "html_title": {
-    "message": "HTML代码格式化"
   },
   "blank": {
     "message": "删除空行"

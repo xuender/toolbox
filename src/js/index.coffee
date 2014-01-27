@@ -69,6 +69,7 @@ ToolboxCtrl = ($scope, $modal)->
         new CssBeautify($scope, chrome.i18n.getMessage('css'))
         new HtmlBeautify($scope, chrome.i18n.getMessage('html'))
         new JsonBeautify($scope, chrome.i18n.getMessage('json'))
+        new SqlBeautify($scope, chrome.i18n.getMessage('sql'))
       ]
     }
   ]
