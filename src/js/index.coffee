@@ -94,13 +94,22 @@ ToolboxCtrl = ($scope, $modal)->
       $scope.input = h.input
     TRACKER.sendEvent('command', 'sys', 'undo')
 
+  $scope.showAbout = false
   $scope.about = ->
+    if $scope.showAbout
+      return
+    $scope.showAbout = true
     d = $modal.open
       backdrop: true
       keyboard: true
       backdropClick: true
       templateUrl: 'about.html'
       controller: 'AboutCtrl'
+    d.result.then(->
+      $scope.showAbout = false
+    ,->
+      $scope.showAbout = false
+    )
     TRACKER.sendEvent('command', 'sys', 'about')
 
   $scope.clean = ->
